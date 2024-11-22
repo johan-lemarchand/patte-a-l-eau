@@ -1,7 +1,20 @@
+'use client'
+
+import { useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 export default function Header() {
+  const navbarToggler = useRef<HTMLButtonElement>(null);
+  const navbarCollapse = useRef<HTMLDivElement>(null);
+
+  const handleLinkClick = () => {
+    // Vérifie si la navbar est ouverte (visible sur mobile)
+    if (navbarCollapse.current?.classList.contains('show')) {
+      navbarToggler.current?.click();
+    }
+  };
+
   return (
     <div className="border-bottom bg-white sticky-top">
       <div className="r-container">
@@ -13,6 +26,7 @@ export default function Header() {
               </Link>
             </div>
             <button 
+              ref={navbarToggler}
               className="navbar-toggler" 
               type="button" 
               data-bs-toggle="collapse"
@@ -23,40 +37,40 @@ export default function Header() {
             >
               <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <div ref={navbarCollapse} className="collapse navbar-collapse" id="navbarSupportedContent">
               <ul className="navbar-nav mx-auto mb-2 mb-lg-0 gap-4">
                 <li className="nav-item">
-                  <Link className="nav-link active" aria-current="page" href="/">
+                  <Link className="nav-link active" aria-current="page" href="/" onClick={handleLinkClick}>
                     Accueil
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="#about">
+                  <Link className="nav-link" href="#about" onClick={handleLinkClick}>
                     À propos
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="#service">
+                  <Link className="nav-link" href="#service" onClick={handleLinkClick}>
                     Services
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="#pricing">
+                  <Link className="nav-link" href="#pricing" onClick={handleLinkClick}>
                     Tarifs
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="#partner">
+                  <Link className="nav-link" href="#partner" onClick={handleLinkClick}>
                     Partenaires
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="#faq">
+                  <Link className="nav-link" href="#faq" onClick={handleLinkClick}>
                     Faq
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="#contact">
+                  <Link className="nav-link" href="#contact" onClick={handleLinkClick}>
                     Contact
                   </Link>
                 </li>
@@ -76,8 +90,8 @@ export default function Header() {
                   </Link>
               </div>
               <div>
-                <Link href="tel:+12345678" className="btn btn-accent px-4 py-3">
-                  <i className="fa-solid fa-phone"></i>
+                <Link href="tel:+33627806061" className="btn btn-accent px-4 py-3">
+                  <i className="fa-solid fa-phone me-2"></i>
                   06 27 80 60 61
                 </Link>
               </div>

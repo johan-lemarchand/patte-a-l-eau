@@ -62,7 +62,7 @@ export default function Footer() {
                                             </li>
                                             <li>
                                                 <i className="fa-solid fa-chevron-right fa-xs"></i>
-                                                <Link href="#faqs" className="link">FAQs</Link>
+                                                <Link href="#faq" className="link">FAQs</Link>
                                             </li>
                                         </ul>
                                     </div>
@@ -74,16 +74,33 @@ export default function Footer() {
                                 <h5 className="fw-semibold border-bottom pb-2">Contactez-nous</h5>
                                 <ul className="list gap-2">
                                     <li>
-                                        <i className="fa fa-location-dot"></i>
-                                        62 Rue de Soufflenheim, 67480 Rountzenheim-Auenheim
+                                        <a 
+                                            href="https://maps.google.com?q=62+Rue+de+Soufflenheim+67480+Rountzenheim-Auenheim" 
+                                            target="_blank" 
+                                            rel="noopener noreferrer"
+                                            className="link"
+                                        >
+                                            <i className="fa fa-location-dot me-2"></i>
+                                            62 Rue de Soufflenheim, 67480 Rountzenheim-Auenheim
+                                        </a>
                                     </li>
                                     <li>
-                                        <i className="fa fa-phone"></i>
-                                        06 27 80 60 61
+                                        <a 
+                                            href="tel:+33627806061"
+                                            className="link"
+                                        >
+                                            <i className="fa fa-phone me-2"></i>
+                                            06 27 80 60 61
+                                        </a>
                                     </li>
                                     <li>
-                                        <i className="fa fa-envelope"></i>
-                                        hello@domainsite.com
+                                        <a 
+                                            href="mailto:hello@domainsite.com"
+                                            className="link"
+                                        >
+                                            <i className="fa fa-envelope me-2"></i>
+                                            hello@domainsite.com
+                                        </a>
                                     </li>
                                 </ul>
                                 <div className="social-container mb-lg-0 mb-3">

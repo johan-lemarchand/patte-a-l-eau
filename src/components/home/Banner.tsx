@@ -8,14 +8,14 @@ export default function Banner() {
         <div className="row row-cols-lg-2 row-cols-1">
           <div className="col mb-3">
             <div className="d-flex flex-column justify-content-center h-100 pe-lg-5 pe-0">
-              <span className="font-1 accent-color-2 fs-3">Bienvenue au salon de toilettage Patte à l&apos;eau</span>
+              <span className="font-1 accent-color-2 fs-3">Bienvenue au salon de toilettage Pattes à l&apos;eau</span>
               <div className="mb-4">
                 <h3 className="font-2 fw-semibold">
                   Prendre soin de vos animaux avec compétence et professionnalisme
                 </h3>
               </div>
               <p className="text-gray">
-                Au salon de toilettage Patte à l&apos;eau, nous sommes dédiés à fournir un soin attentif et complet pour vos animaux. De la toilettage à l&apos;hébergement, nous nous assurons que vos compagnons sont heureux et bien entretenus.
+                Au salon de toilettage Pattes à l&apos;eau, nous sommes dédiés à fournir un soin attentif et complet pour vos animaux. De la toilettage à l&apos;hébergement, nous nous assurons que vos compagnons sont heureux et bien entretenus.
               </p>
               <div className="d-flex flex-row gap-3 mt-3">
                 <Link href="#about" className="btn btn-accent px-5 py-3 fw-semibold">

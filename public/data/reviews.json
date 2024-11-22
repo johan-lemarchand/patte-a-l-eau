@@ -1,0 +1,28 @@
+{
+  "totalReviews": 10,
+  "rating": 5,
+  "reviews": [
+    {
+      "author_name": "Louise Burg",
+      "rating": 5,
+      "text": "Toiletteuse au top, à l'écoute et bienveillante ! Nous avons été satisfait de la prestation sur notre chien de race shiba inu, une grande aide en fin de mue pour enlever tous les poils!! Supers conseils pour entretenir son poil au quotidien. Merci Clara ! Nous reviendrons et nous recommandons vivement !",
+      "date": "2024-09-07",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocIgz-4cpXDGk-offvy3k8KL0JuVUDJezMuZU60i9Kn2b_HqaQ=s128-c0x00000000-cc-rp-mo"
+    },
+    {
+      "author_name": "Sabrina STOLTZ",
+      "rating": 5,
+      "text": "Première expérience au Top. Le professionnalisme de la personne Extra. Vous avez su rassurer mon chien. BRAVO pour votre travail, votre sympathie et votre amour du métier",
+      "date": "2024-09-09",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocLR6WL0vS-iVTmToe8t2BlmPEqFkIDNTOXFkPPYiEV05jnfPg=s128-c0x00000000-cc-rp-mo"
+    },
+    {
+      "author_name": "me ch",
+      "rating": 5,
+      "text": "Très bon accueil, serviable et service impeccable et soigné. Je recommande",
+      "date": "2024-09-28",
+      "image": "https://lh3.googleusercontent.com/a/ACg8ocI8CrhTe6wVmPIpoPc1P-UjnT39adPaRwCzymBN9lS6rdKzJA=s128-c0x00000000-cc-rp-mo-ba3"
+    }
+  ],
+  "lastUpdate": "2024-11-22"
+}
