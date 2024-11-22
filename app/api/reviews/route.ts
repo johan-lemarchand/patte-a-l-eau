@@ -1,4 +1,5 @@
-import { formatReviews, saveReviewsToTmp, GooglePlacesResponse } from '@johan27000/next-google-reviews';
+import { formatReviews, PlaceDetails } from '@johan27000/next-google-reviews';
+import { saveReviewsToTmp, GooglePlacesResponse } from '@johan27000/next-google-reviews/server';
 
 export async function GET() {
     try {
@@ -19,7 +20,7 @@ export async function GET() {
         const reviews = data.result.reviews || [];
         const limitedReviews = reviews.slice(0, 5);
 
-        const formattedData = {
+        const formattedData: PlaceDetails = {
             totalReviews: data.result.user_ratings_total || 0,
             rating: data.result.rating || 0,
             reviews: formatReviews(limitedReviews),
@@ -35,6 +36,6 @@ export async function GET() {
             rating: 0,
             reviews: [],
             lastUpdate: new Date().toISOString()
-        });
+        } as PlaceDetails);
     }
 }
