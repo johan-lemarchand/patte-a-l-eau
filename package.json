@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@johan27000/next-google-reviews": "^1.1.3",
+    "@johan27000/next-google-reviews": "^1.1.4",
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028"
