@@ -1,6 +1,6 @@
 {
   "name": "patte-a-l-eau",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@johan27000/next-google-reviews": "^1.1.0",
+    "@johan27000/next-google-reviews": "^1.1.1",
     "next": "15.0.2",
     "react": "19.0.0-rc-02c0e824-20241028",
     "react-dom": "19.0.0-rc-02c0e824-20241028"
