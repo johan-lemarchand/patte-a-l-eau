@@ -1,5 +1,9 @@
-import { formatReviews, PlaceDetails } from '@johan27000/next-google-reviews';
-import { saveReviewsToTmp, GooglePlacesResponse } from '@johan27000/next-google-reviews/server';
+import { 
+    saveReviewsToTmp, 
+    formatReviews, 
+    GooglePlacesResponse,
+    PlaceDetails 
+} from '@johan27000/next-google-reviews/server';
 
 export async function GET() {
     try {
