@@ -43,17 +43,14 @@ export default function MinioImage({
     ...props 
 }: MinioImageProps) {
     const [imageUrl, setImageUrl] = useState<string>('');
-    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const loadImage = async () => {
-            setIsLoading(true);
             const objectName = src.split('/').pop();
             if (objectName) {
                 const url = await getMinioUrl(objectName);
                 if (url) setImageUrl(url);
             }
-            setIsLoading(false);
         };
         loadImage();
     }, [src]);

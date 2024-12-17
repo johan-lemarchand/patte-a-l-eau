@@ -37,13 +37,15 @@ export default function About() {
                             <div className="mb-4">
                                 <h3 className="font-2 fw-semibold">{about.texts.title.text}</h3>
                             </div>
-                            {about.texts.description.map((paragraph, index) => (
-                                <p key={index} className="text-gray">
-                                    {paragraph}
-                                </p>
-                            ))}
+                            <div className="text-gray">
+                                {about.texts.description.map((paragraph, index) => (
+                                    <p key={index} className="text-gray">
+                                        {paragraph}
+                                    </p>
+                                ))}
+                            </div>
                             <div className="row row-cols-lg-2 row-cols-1 mt-2">
-                                {about.features.map((feature, index) => (
+                                {about.features.map((feature) => (
                                     <div key={feature.id} className="col">
                                         <div>
                                             <div className="d-flex flex-row align-items-center gap-2 mb-3">

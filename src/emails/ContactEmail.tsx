@@ -32,7 +32,7 @@ export const ContactEmail = ({
             <Preview>Nouveau message de {first_name} {last_name}</Preview>
             <Body style={main}>
             <Container style={container}>
-                <Heading style={h1}>Nouveau message depuis Patte à l'eau</Heading>
+                <Heading style={h1}>Nouveau message depuis Patte à l&apos;eau</Heading>
                 <Section style={section}>
                 <Heading as="h2" style={h2}>
                     Informations du contact
