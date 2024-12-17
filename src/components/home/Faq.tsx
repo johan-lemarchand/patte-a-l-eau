@@ -1,81 +1,60 @@
-import Image from 'next/image'
+"use client";
+
+import MinioImage from '@/components/common/MinioImage'
+import content from '@/content.json'
 
 interface FaqItem {
-    id: number;
+    id: string;
     question: string;
     answer: string;
-    isOpen: boolean;
 }
 
 export default function Faq() {
-    const faqItems: FaqItem[] = [
-        {
-            id: 1,
-            question: "Acceptez-vous les chiens de catégorie ?",
-            answer: "Oui j'accepte les chiens de catégorie. Je bénéficie même de la formation de détendeur de chien de catégorie 1 et 2.",
-            isOpen: true
-        },
-        {
-            id: 2,
-            question: "Le maître peut-il rester avec lors du toilettage ?",
-            answer: "Oui le maître peut rester avec si le chien reste en place car certain loulou en voyant la présence du maître peut ne pas ce laisser faire. Pour une question de sécurité il est préférable que le maître ne soit alors pas avec.",
-            isOpen: false
-        },
-        {
-            id: 3,
-            question: "Acceptez vous tout type de chien et chat ?",
-            answer: "Qu'importe la taille tout chien et chat sont acceptés.",
-            isOpen: false
-        },
-        {
-            id: 4,
-            question: "Quel type de produit utilisez vous ?",
-            answer: "J'utilise la gamme Petux qui est une gamme vegan et eco responsable.",
-            isOpen: false
-        },
-        {
-            id: 5,
-            question: "Combien de temps dure en moyenne un toilettage ?",
-            answer: "En général un toilettage dure 2 heures mais ce temps peut varier en fonction de la taille et de l'état de l'animal dans ce cas des frais supplémentaires sont mis en place.",
-            isOpen: false
-        }
-    ];
+    const { faq } = content;
 
     return (
-        <div id='faq' className="section position-relative">
-            <div className="r-container">
+        <div id={faq.id} className="section position-relative">
+            <div id="faq" className="r-container">
                 <div className="d-flex flex-lg-row flex-column-reverse gap-4">
+                    {/* Colonne de gauche : FAQ */}
                     <div className="col px-lg-5 mb-5">
                         <div className="d-flex flex-column justify-content-center gap-3">
-                            <span className="font-1 accent-color-2 fs-3">FAQs</span>
+                            {/* En-tête */}
+                            <span id={faq.texts.subtitle.id} className="font-1 accent-color-2 fs-3">
+                                {faq.texts.subtitle.text}
+                            </span>
 
-                            <h3 className="font-2 fw-semibold">
-                                Questions Fréquemment Posées
+                            <h3 id={faq.texts.title.id} className="font-2 fw-semibold">
+                                {faq.texts.title.text}
                             </h3>
-                            <p className="text-gray">
-                                Retrouvez ici les réponses aux questions les plus fréquentes concernant nos services de toilettage.
+                            
+                            <p id={faq.texts.description.id} className="text-gray">
+                                {faq.texts.description.text}
                             </p>
+
+                            {/* Liste des questions */}
                             <div className="accordion d-flex flex-column gap-4" id="accordionExample">
-                                {faqItems.map((item) => (
-                                    <div className="accordion-item" key={item.id}>
+                                {faq.questions.map((item: FaqItem) => (
+                                    <div id={item.id} className="accordion-item" key={item.id}>
                                         <h2 className="accordion-header">
                                             <button 
-                                                className={`accordion-button ${!item.isOpen ? 'collapsed' : ''}`}
+                                                id={`faq-question-${item.id}`}
+                                                className="accordion-button collapsed"
                                                 type="button"
                                                 data-bs-toggle="collapse"
                                                 data-bs-target={`#collapse${item.id}`}
-                                                aria-expanded={item.isOpen}
+                                                aria-expanded="false"
                                                 aria-controls={`collapse${item.id}`}
                                             >
                                                 {item.question}
                                             </button>
                                         </h2>
-                                        <div 
+                                        <div
                                             id={`collapse${item.id}`}
-                                            className={`accordion-collapse collapse ${item.isOpen ? 'show' : ''}`}
+                                            className="accordion-collapse collapse"
                                             data-bs-parent="#accordionExample"
                                         >
-                                            <div className="accordion-body">
+                                            <div id={`faq-answer-${item.id}`} className="accordion-body">
                                                 {item.answer}
                                             </div>
                                         </div>
@@ -84,43 +63,21 @@ export default function Faq() {
                             </div>
                         </div>
                     </div>
+
+                    {/* Colonne de droite : Image */}
                     <div className="col">
-                        <div className="position-relative px-lg-5">
-                            <div className="rounded-3 px-5">
-                                <Image 
-                                    src="/image/photo-1.webp"
-                                    alt="FAQ illustration"
-                                    width={600}
-                                    height={800}
-                                    className="img-fluid faq-img"
-                                />
-                            </div>
-                            <div className="floating-top">
-                                <div className="bg-accent-color rounded-3 d-flex align-items-center gap-3 px-lg-5 py-lg-3 px-2 py-1 text-white">
-                                    <div style={{ fontSize: '3rem' }}>
-                                        <i className="fa-solid fa-paw"></i>
-                                    </div>
-                                    <div>
-                                        <h3 className="m-0 fw-semibold">2K</h3>
-                                        <span>Animaux satisfaits</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="floating-bottom">
-                                <div className="bg-accent-color rounded-3 d-flex align-items-center gap-3 px-lg-5 py-lg-3 px-2 py-1 text-white">
-                                    <div style={{ fontSize: '3rem' }}>
-                                        <i className="fa-solid fa-user-group"></i>
-                                    </div>
-                                    <div>
-                                        <h3 className="m-0 fw-semibold">4K</h3>
-                                        <span>Clients Satisfaits</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div className="position-relative">
+                            <MinioImage
+                                src="/photo-1.webp"
+                                alt="FAQ illustration"
+                                width={600}
+                                height={700}
+                                className="img-fluid"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    )
+    );
 }

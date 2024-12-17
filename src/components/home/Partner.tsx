@@ -1,40 +1,37 @@
-import Image from 'next/image'
+import MinioImage from '@/components/common/MinioImage'
 import Link from 'next/link'
+import content from '@/content.json'
 
 interface Partner {
-    id: number;
+    id: string;
     logo: string;
     name: string;
     url: string;
 }
 
 export default function Partner() {
-    const partners: Partner[] = [
-    { id: 1, logo: "/image/logo-ipsum-2.png", name: "Partenaire 1", url: "https://partenaire1.com" },
-    { id: 2, logo: "/image/logo-ipsum-3.png", name: "Partenaire 2", url: "https://partenaire2.com" },
-    { id: 3, logo: "/image/logo-ipsum-4.png", name: "Partenaire 3", url: "https://partenaire3.com" },
-    { id: 4, logo: "/image/logo-ipsum-5.png", name: "Partenaire 4", url: "https://partenaire4.com" },
-    { id: 5, logo: "/image/logo-ipsum-6.png", name: "Partenaire 5", url: "https://partenaire5.com" },
-    ];
+    const { partners } = content;
 
     return (
-        <div id="partner" className="py-5 bg-light-color">
-        <div className="r-container">
+        <div id={partners.id} className="py-5 bg-light-color">
+        <div id="partner" className="r-container">
             <div className="row row-cols-xl-5 row-cols-lg-3 row-cols-sm-2 row-cols-1 w-100">
-            {partners.map((partner) => (
-                <div key={partner.id} className="col px-4">
+            {partners.items.map((partner) => (
+                <div key={partner.id} id={partner.id} className="col px-4">
                 <Link 
+                    id={`partner-link-${partner.id}`}
                     href={partner.url}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="d-block hover:opacity-80 transition-opacity"
                 >
-                    <Image 
-                    src={partner.logo}
-                    alt={`Logo ${partner.name}`}
-                    width={200}
-                    height={100}
-                    className="img-fluid"
+                    <MinioImage
+                        id={`partner-logo-${partner.id}`}
+                        src={partner.logo}
+                        alt={`Logo ${partner.name}`}
+                        width={150}
+                        height={50}
+                        className="partner-logo"
                     />
                 </Link>
                 </div>
@@ -43,4 +40,4 @@ export default function Partner() {
         </div>
         </div>
     )
-} 
+}

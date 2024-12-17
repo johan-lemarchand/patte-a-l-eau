@@ -2,9 +2,11 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import MinioImage from '@/components/common/MinioImage'
+import content from '@/content.json'
 
 export default function Header() {
+  const { header } = content;
   const navbarToggler = useRef<HTMLButtonElement>(null);
   const navbarCollapse = useRef<HTMLDivElement>(null);
 
@@ -22,7 +24,14 @@ export default function Header() {
           <div className="container-fluid">
             <div className="logo-container">
               <Link className="navbar-brand" href="/">
-                <Image src="/image/logo-clara.webp" alt="Logo patte à l'eau" className="img-fluid" width={150} height={50} />
+                <MinioImage
+                  id={header.logo.id}
+                  src={header.logo.src}
+                  alt={header.logo.alt}
+                  width={150}
+                  height={50}
+                  className="img-fluid"
+                />
               </Link>
             </div>
             <button 
@@ -60,6 +69,11 @@ export default function Header() {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link className="nav-link" href="#review" onClick={handleLinkClick}>
+                    Mes avis
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link className="nav-link" href="#partner" onClick={handleLinkClick}>
                     Partenaires
                   </Link>
@@ -90,9 +104,9 @@ export default function Header() {
                   </Link>
               </div>
               <div>
-                <Link href="tel:+33627806061" className="btn btn-accent px-4 py-3">
+                <Link href={`tel:${header.phone.number}`} className="btn btn-accent px-4 py-3">
                   <i className="fa-solid fa-phone me-2"></i>
-                  06 27 80 60 61
+                  {header.phone.text}
                 </Link>
               </div>
             </div>
@@ -101,4 +115,4 @@ export default function Header() {
       </div>
     </div>
   )
-} 
+}

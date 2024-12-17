@@ -1,0 +1,337 @@
+{
+  "header": {
+    "logo": {
+      "id": "header-logo",
+      "src": "logo-clara.webp",
+      "alt": "Logo Patte à l'eau"
+    },
+    "phone": {
+      "number": "+33627806061",
+      "text": "06 27 80 60 61"
+    }
+  },
+  "banner": {
+    "id": "banner-section",
+    "texts": {
+      "subtitle": {
+        "id": "banner-subtitle",
+        "text": "Bienvenue au salon de toilettage Pattes à l'eau"
+      },
+      "title": {
+        "id": "banner-title",
+        "text": "Prendre soin de vos animaux avec compétence et professionnalisme"
+      },
+      "description": {
+        "id": "banner-description",
+        "text": "Au salon de toilettage Pattes à l'eau, nous sommes dédiés à fournir un soin attentif et complet pour vos animaux. De la toilettage à l'hébergement, nous nous assurons que vos compagnons sont heureux et bien entretenus."
+      },
+      "buttons": {
+        "primary": {
+          "id": "banner-btn-primary",
+          "text": "En savoir plus"
+        },
+        "secondary": {
+          "id": "banner-btn-secondary",
+          "text": "Contactez-moi"
+        }
+      }
+    },
+    "images": {
+      "main": {
+        "id": "banner-image",
+        "src": "photo-1.webp",
+        "alt": "Banner Image"
+      },
+      "video": {
+        "id": "banner-video-thumbnail",
+        "src": "photo-2.webp",
+        "alt": "Video Thumbnail"
+      }
+    }
+  },
+  "services": {
+    "id": "services-section",
+    "texts": {
+      "subtitle": {
+        "id": "services-subtitle",
+        "text": "Services"
+      },
+      "title": {
+        "id": "services-title",
+        "text": "Des Services de Toilettage et de Bien-Être pour Vos Compagnons"
+      },
+      "description": {
+        "id": "services-description",
+        "text": "Offrez à vos animaux de compagnie une expérience de toilettage et de bien-être inégalée. Clara propose des services de toilettage professionnels, un accueil chaleureux, et des soins personnalisés pour assurer le confort et la sérénité de chaque animal. Que ce soit pour un toilettage complet, des soins réguliers, ou un moment de détente, nous mettons tout en œuvre pour que votre compagnon soit entre de bonnes mains."
+      }
+    },
+    "items": [
+      {
+        "id": "service-1",
+        "title": "Installations Confortables",
+        "description": "Un espace calme et accueillant, conçu pour le bien-être de votre animal et pour réduire le stress pendant les soins.",
+        "image": "photo-2.webp",
+        "alt": "Installations Confortables"
+      },
+      {
+        "id": "service-2",
+        "title": "Soins de Toilettage Professionnels",
+        "description": "Des soins complets et personnalisés adaptés aux besoins de chaque race, réalisés avec des produits de qualité.",
+        "image": "photo-2.webp",
+        "alt": "Soins de Toilettage Professionnels"
+      },
+      {
+        "id": "service-3",
+        "title": "Attention Personnalisée pour Chaque Animal",
+        "description": "Chaque animal est unique et mérite une attention particulière. Clara prend le temps de s'adapter aux besoins et aux préférences de votre compagnon.",
+        "image": "photo-2.webp",
+        "alt": "Attention Personnalisée"
+      }
+    ]
+  },
+  "pricing": {
+    "id": "pricing-section",
+    "texts": {
+      "subtitle": {
+        "id": "pricing-subtitle",
+        "text": "Tarifs"
+      },
+      "title": {
+        "id": "pricing-title",
+        "text": "Nos Forfaits de Toilettage"
+      }
+    },
+    "plans": [
+      {
+        "id": "pricing-plan-1",
+        "title": "CHATS",
+        "basePrice": 50,
+        "image": {
+          "src": "photo-2.webp",
+          "alt": "Forfait Chats"
+        }
+      },
+      {
+        "id": "pricing-plan-2",
+        "title": "PETIT GABARIT [< 10 KGS]",
+        "basePrice": 45,
+        "extraPrice": 20,
+        "image": {
+          "src": "photo-2.webp",
+          "alt": "Forfait Petit Gabarit"
+        }
+      },
+      {
+        "id": "pricing-plan-3",
+        "title": "GABARIT MOYEN [< 20 KGS]",
+        "basePrice": 60,
+        "extraPrice": 30,
+        "image": {
+          "src": "photo-2.webp",
+          "alt": "Forfait Gabarit Moyen"
+        }
+      },
+      {
+        "id": "pricing-plan-4",
+        "title": "GRAND GABARIT [< 40 KGS]",
+        "basePrice": 70,
+        "extraPrice": 35,
+        "image": {
+          "src": "photo-2.webp",
+          "alt": "Forfait Grand Gabarit"
+        }
+      },
+      {
+        "id": "pricing-plan-5",
+        "title": "TRÈS GRAND GABARIT [> 40 KGS]",
+        "basePrice": 90,
+        "extraPrice": 40,
+        "image": {
+          "src": "photo-2.webp",
+          "alt": "Forfait Très Grand Gabarit"
+        }
+      }
+    ]
+  },
+  "testimonials": {
+    "id": "testimonials-section",
+    "texts": {
+      "subtitle": {
+        "id": "testimonials-subtitle",
+        "text": "Nos avis"
+      },
+      "title": {
+        "id": "testimonials-title",
+        "text": "Voir les avis de nos clients"
+      },
+      "description": {
+        "id": "testimonials-description",
+        "text": "Découvrez ce que nos clients pensent de nos services ! Nous nous engageons à offrir une expérience de toilettage attentionnée et professionnelle pour chaque compagnon à quatre pattes. Nos clients apprécient l'attention portée au bien-être de leurs animaux et la qualité de notre travail. Lisez leurs témoignages et voyez pourquoi ils nous font confiance pour prendre soin de leurs compagnons."
+      }
+    }
+  },
+  "faq": {
+    "id": "faq-section",
+    "texts": {
+      "subtitle": {
+        "id": "faq-subtitle",
+        "text": "FAQs"
+      },
+      "title": {
+        "id": "faq-title",
+        "text": "Questions Fréquemment Posées"
+      },
+      "description": {
+        "id": "faq-description",
+        "text": "Retrouvez ici les réponses aux questions les plus fréquentes concernant nos services de toilettage."
+      }
+    },
+    "questions": [
+      {
+        "id": "faq-1",
+        "question": "Acceptez-vous les chiens de catégorie ?",
+        "answer": "Oui j'accepte les chiens de catégorie. Je bénéficie même de la formation de détendeur de chien de catégorie 1 et 2."
+      },
+      {
+        "id": "faq-2",
+        "question": "Le maître peut-il rester avec lors du toilettage ?",
+        "answer": "Oui le maître peut rester avec si le chien reste en place car certain loulou en voyant la présence du maître peut ne pas ce laisser faire. Pour une question de sécurité il est préférable que le maître ne soit alors pas avec."
+      },
+      {
+        "id": "faq-3",
+        "question": "Acceptez vous tout type de chien et chat ?",
+        "answer": "Qu'importe la taille tout chien et chat sont acceptés."
+      },
+      {
+        "id": "faq-4",
+        "question": "Quels sont les moyens de paiement acceptés ?",
+        "answer": "J'accepte les paiements par carte bancaire, espèces et chèques."
+      }
+    ],
+    "images": {
+      "main": {
+        "id": "faq-image",
+        "src": "photo-1.webp",
+        "alt": "FAQ illustration"
+      }
+    }
+  },
+  "about": {
+    "id": "about-section",
+    "texts": {
+      "subtitle": {
+        "id": "about-subtitle",
+        "text": "À propos"
+      },
+      "title": {
+        "id": "about-title",
+        "text": "Rencontrez Clara, votre toiletteuse dédiée"
+      },
+      "description": [
+        "Je m'appelle Clara, artisan toiletteuse spécialisée pour chiens et chats. Basée à Auenheim Rountzenheim, j'ai suivi une formation de toilettage canin et félin en 2022, ce qui m'a permis d'obtenir un diplôme et de transformer ma passion en métier.",
+        "Forte de mon expérience au sein d'une association de protection animale pendant de nombreuses années, je suis pleinement dévouée au bien-être de vos compagnons. J'ai hâte de prendre soin de votre loulou dans un environnement calme et attentionné, en veillant à chaque détail pour leur confort et leur beauté."
+      ]
+    },
+    "image": {
+      "src": "photo-3.webp",
+      "alt": "About"
+    },
+    "stats": {
+      "count": "2K",
+      "text": "boules de poils satisfaites"
+    },
+    "features": [
+      {
+        "id": "feature-1",
+        "icon": "/image/icon-1.png",
+        "title": "Soin Expert",
+        "description": "Passionnée par les animaux et diplômée en toilettage canin et félin, Clara s'engage à offrir des soins de qualité pour chaque compagnon à quatre pattes. Grâce à une expérience au sein d'une association de protection animale, elle comprend l'importance du bien-être de chaque animal et veille à leur offrir un environnement de toilettage apaisant."
+      },
+      {
+        "id": "feature-2",
+        "icon": "/image/icon-2.png",
+        "title": "Emplacement Pratique",
+        "description": "Située à Auenheim Rountzenheim, Clara propose un salon de toilettage facilement accessible pour les habitants de la région. Que vous veniez pour un toilettage complet ou un entretien régulier, le salon est aménagé pour offrir un cadre confortable et accueillant pour vous et votre compagnon."
+      }
+    ]
+  },
+  "contact": {
+    "id": "contact-section",
+    "texts": {
+      "subtitle": {
+        "id": "contact-subtitle",
+        "text": "Contact"
+      },
+      "title": {
+        "id": "contact-title",
+        "text": "Prenez rendez-vous"
+      },
+      "description": {
+        "id": "contact-description",
+        "text": "Vous souhaitez prendre rendez-vous ou avoir plus d'informations ? N'hésitez pas à me contacter !"
+      }
+    },
+    "info": [
+      {
+        "id": "contact-location",
+        "icon": "fa-location-dot",
+        "title": "Localisation",
+        "content": "62 rue de Soufflenheim, 67480 Rountzenheim-Auenheim"
+      },
+      {
+        "id": "contact-phone",
+        "icon": "fa-phone",
+        "title": "Téléphone",
+        "content": "06 27 80 60 61"
+      },
+      {
+        "id": "contact-email",
+        "icon": "fa-envelope",
+        "title": "Email",
+        "content": "hello@domainsite.com"
+      }
+    ]
+  },
+  "partners": {
+    "id": "partners-section",
+    "items": [
+      {
+        "id": "partner-1",
+        "logo": "logo-ipsum-2.png",
+        "name": "Partenaire 1",
+        "url": "https://partenaire1.com"
+      },
+      {
+        "id": "partner-2",
+        "logo": "logo-ipsum-3.png",
+        "name": "Partenaire 2",
+        "url": "https://partenaire2.com"
+      },
+      {
+        "id": "partner-3",
+        "logo": "logo-ipsum-4.png",
+        "name": "Partenaire 3",
+        "url": "https://partenaire3.com"
+      },
+      {
+        "id": "partner-4",
+        "logo": "logo-ipsum-5.png",
+        "name": "Partenaire 4",
+        "url": "https://partenaire4.com"
+      },
+      {
+        "id": "partner-5",
+        "logo": "logo-ipsum-6.png",
+        "name": "Partenaire 5",
+        "url": "https://partenaire5.com"
+      }
+    ]
+  },
+  "footer": {
+    "logo": {
+      "src": "logo-clara.webp",
+      "alt": "Logo"
+    },
+    "quote": "Prenez soin de vos compagnons avec amour et expertise. Chez Patte à l'eau, chaque toilettage est une caresse."
+  }
+}

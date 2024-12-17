@@ -35,7 +35,10 @@ export default function RootLayout({
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
         />
       </head>
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body 
+        className={`${geistSans.variable} ${geistMono.variable}`}
+        suppressHydrationWarning={true}
+      >
         <Header />
         {children}
         <Footer />
@@ -45,16 +48,18 @@ export default function RootLayout({
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
           strategy="afterInteractive"
         />
-        <Script src="/js/vendor/jquery.min.js" strategy="beforeInteractive" />
-        <Script src="/js/vendor/swiper-bundle.min.js" strategy="beforeInteractive" />
-        <Script src="/js/vendor/isotope.pkgd.min.js" strategy="beforeInteractive" />
-        <Script src="/js/vendor/fslightbox.js" strategy="beforeInteractive" />
-        
-        {/* Scripts personnalisés */}
-        <Script src="/js/script.js" strategy="afterInteractive" />
-        <Script src="/js/swiper-script.js" strategy="afterInteractive" />
-        <Script src="/js/submit-form.js" strategy="afterInteractive" />
-        <Script src="/js/video_embedded.js" strategy="afterInteractive" />
+        <Script 
+          src="https://code.jquery.com/jquery-3.7.1.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script 
+          src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"
+          strategy="beforeInteractive"
+        />
+        <Script 
+          src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"
+          strategy="beforeInteractive"
+        />
       </body>
     </html>
   );

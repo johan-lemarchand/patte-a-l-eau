@@ -1,25 +1,29 @@
-import Image from 'next/image'
+'use client'
+
+import MinioImage from '@/components/common/MinioImage'
 import Link from 'next/link'
+import content from '@/content.json'
 
 export default function Footer() {
+    const { footer } = content;
     return (
         <footer>
             <div className="section pb-0 bg-light-color">
-                <div className="r-container py-lg-5 pt-5 border-bottom">
-                    <div className="row row-cols-lg-3 row-cols-1 w-100 pt-5">
+                <div className="r-container">
+                    <div className="row row-cols-lg-3 row-cols-1">
                         <div className="col mb-3">
                             <div className="d-flex flex-column gap-4">
                                 <div className="container">
-                                    <Image
-                                        src="/image/logo-clara.webp"
-                                        alt="Logo patte à l'eau"
-                                        width={250}
-                                        height={100}
-                                        className="img-fluid"
+                                    <MinioImage
+                                        src={footer.logo.src}
+                                        alt={footer.logo.alt}
+                                        width={150}
+                                        height={50}
+                                        className="img-fluid mb-4"
                                     />
                                 </div>
                                 <p className="text-gray">
-                                    &quot;Prenez soin de vos compagnons avec amour et expertise. Chez Patte à l&apos;eau, chaque toilettage est une caresse.&quot;
+                                    {footer.quote}
                                 </p>
                             </div>
                         </div>
@@ -129,7 +133,7 @@ export default function Footer() {
                             <Link href="/terms" className="link text-gray">Term & Services</Link>
                         </div>
                         <span className="text-gray text-center">
-                            Copyright © 2024 Anstett Solutions pro. All Rights Reserved.
+                            Copyright  2024 Anstett Solutions pro. All Rights Reserved.
                         </span>
                     </div>
                 </div>

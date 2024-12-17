@@ -286,7 +286,7 @@ a {
 }
 
 .section {
-    padding: 6em 2em 6em 2em;
+    padding: 2em 2em 2em 2em;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -1014,4 +1014,37 @@ a.link:hover {
         position: relative;
         transform: translateY(0);
     }
+}
+/* Animation des toasts */
+.toast {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    min-width: 250px;
+}
+
+
+.toast.show {
+    opacity: 1;
+}
+
+  /* Style des toasts */
+.toast.border-success {
+    background-color: #d4edda;
+}
+
+.toast.border-danger {
+    background-color: #f8d7da;
+}
+
+  /* Animation de l'icône */
+.toast i {
+    transition: transform 0.2s ease-in-out;
+}
+
+.toast:hover i {
+    transform: scale(1.1);
 }

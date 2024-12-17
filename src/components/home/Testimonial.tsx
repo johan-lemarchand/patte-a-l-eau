@@ -1,35 +1,37 @@
 'use client';
 
 import { GoogleReviewsButton, ReviewsSwiper } from '@johan27000/next-google-reviews';
+import content from '@/content.json';
 
 export default function Testimonial() {
+    const { testimonials } = content;
+
     return (
-        <div className="section">
-            <div className="r-container">
+        <div id={testimonials.id} className="section">
+            <div id="review" className="r-container">
                 <div className="row row-cols-lg-2 row-cols-1 w-100 mb-5">
                     <div className="col pe-lg-5">
                         <div className="d-flex flex-column pe-lg-5">
-                            <span className="font-1 accent-color-2 fs-3">Nos avis</span>
+                            <span id={testimonials.texts.subtitle.id} className="font-1 accent-color-2 fs-3">
+                                {testimonials.texts.subtitle.text}
+                            </span>
                             <div className="mb-4">
-                                <h3 className="font-2 fw-semibold">
-                                    Voir les avis de nos clients
+                                <h3 id={testimonials.texts.title.id} className="font-2 fw-semibold">
+                                    {testimonials.texts.title.text}
                                 </h3>
                             </div>
                         </div>
                     </div>
                     <div className="col">
                         <div className="d-flex align-items-center pe-lg-5 h-100">
-                            <p className="text-gray">
-                                Découvrez ce que nos clients pensent de nos services ! Nous nous engageons à offrir une expérience
-                                de toilettage attentionnée et professionnelle pour chaque compagnon à quatre pattes. Nos clients
-                                apprécient l&apos;attention portée au bien-être de leurs animaux et la qualité de notre travail. Lisez
-                                leurs témoignages et voyez pourquoi ils nous font confiance pour prendre soin de leurs compagnons.
+                            <p id={testimonials.texts.description.id} className="text-gray">
+                                {testimonials.texts.description.text}
                             </p>
                         </div>
                     </div>
                 </div>
-                <GoogleReviewsButton placeId="ChIJA-Vgz8XnlkcRyB153HKgHtQ" /> 
-                <ReviewsSwiper />              
+                <GoogleReviewsButton placeId="ChIJA-Vgz8XnlkcRyB153HKgHtQ" />
+                <ReviewsSwiper />
             </div>
         </div>
     );

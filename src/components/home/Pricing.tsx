@@ -1,57 +1,21 @@
-import Image from 'next/image'
+import MinioImage from '@/components/common/MinioImage'
+import content from '@/content.json'
 
 interface PricingPlan {
-    id: number;
-    image: string;
+    id: string;
     title: string;
     basePrice: number;
     extraPrice?: number;
+    image: {
+        src: string;
+        alt: string;
+    };
     variant: 'light' | 'green' | 'accent';
 }
 
 export default function Pricing() {
-    const pricingPlans: PricingPlan[] = [
-        {
-            id: 1,
-            image: "/image/photo-2.webp",
-            title: "CHATS",
-            basePrice: 50,
-            variant: 'light'
-        },
-        {
-            id: 2,
-            image: "/image/photo-2.webp",
-            title: "PETIT GABARIT [< 10 KGS]",
-            basePrice: 45,
-            extraPrice: 20,
-            variant: 'green'
-        },
-        {
-            id: 3,
-            image: "/image/photo-2.webp",
-            title: "GABARIT MOYEN [< 20 KGS]",
-            basePrice: 60,
-            extraPrice: 30,
-            variant: 'accent'
-        },
-        {
-            id: 4,
-            image: "/image/photo-2.webp",
-            title: "GRAND GABARIT [< 40 KGS]",
-            basePrice: 70,
-            extraPrice: 35,
-            variant: 'green'
-        },
-        {
-            id: 5,
-            image: "/image/photo-2.webp",
-            title: "TRÈS GRAND GABARIT [> 40 KGS]",
-            basePrice: 90,
-            extraPrice: 40,
-            variant: 'light'
-        }
-    ];
-
+    const { pricing } = content;
+    
     const getVariantClasses = (variant: PricingPlan['variant']) => {
         switch (variant) {
             case 'light':
@@ -72,38 +36,58 @@ export default function Pricing() {
         }
     };
 
+    // Assigner les variants aux plans
+    const pricingPlansWithVariants = pricing.plans.map((plan, index) => {
+        let variant: PricingPlan['variant'];
+        if (index % 3 === 0) variant = 'light';
+        else if (index % 3 === 1) variant = 'green';
+        else variant = 'accent';
+        return { ...plan, variant };
+    });
+
     return (
-        <div id="pricing" className="section">
-            <div className="r-container">
+        <div id={pricing.id} className="section">
+            <div id="pricing" className="r-container">
                 <div className="d-flex flex-column gap-3 justify-content-center text-center mx-auto mb-4">
-                    <span className="font-1 accent-color-2 fs-3">Tarifs</span>
-                    <h3 className="font-2 fw-semibold">
-                        Nos Forfaits de Toilettage
+                    <span id={pricing.texts.subtitle.id} className="font-1 accent-color-2 fs-3">
+                        {pricing.texts.subtitle.text}
+                    </span>
+                    <h3 id={pricing.texts.title.id} className="font-2 fw-semibold">
+                        {pricing.texts.title.text}
                     </h3>
                 </div>
 
                 <div className="row row-cols-lg-3 row-cols-1 g-4 mb-5">
-                    {pricingPlans.map((plan) => {
+                    {pricingPlansWithVariants.map((plan) => {
                         const variantClasses = getVariantClasses(plan.variant);
                         
                         return (
-                            <div key={plan.id} className="col">
+                            <div key={plan.id} id={plan.id} className="col">
                                 <div className="h-100 d-flex flex-column">
                                     <div className="position-relative" style={{ height: '250px' }}>
-                                        <Image 
-                                            src={plan.image}
-                                            alt={plan.title}
+                                        <MinioImage 
+                                            id={`pricing-image-${plan.id}`}
+                                            src={plan.image.src}
+                                            alt={plan.image.alt}
                                             fill
-                                            style={{ objectFit: 'cover' }}
+                                            sizes="(max-width: 768px) 100vw, 33vw"
                                             className="rounded-top-3"
+                                            style={{ objectFit: 'cover' }}
+                                            priority
                                         />
                                     </div>
-                                    <div className={`${variantClasses.container} p-4 flex-grow-1 rounded-bottom-3 shadow-sm`}>
-                                        <h5 className="fw-semibold text-center mb-4">{plan.title}</h5>
-                                        <div className="mb-3">
-                                            <p className="mb-2">Forfait de base : {plan.basePrice}€</p>
+                                    <div id={`pricing-content-${plan.id}`} className={`${variantClasses.container} p-4 flex-grow-1 rounded-bottom-3 shadow-sm`}>
+                                        <h5 id={`pricing-title-${plan.id}`} className="fw-semibold mb-3">
+                                            {plan.title}
+                                        </h5>
+                                        <div id={`pricing-price-${plan.id}`} className="d-flex flex-column gap-2 mb-3">
+                                            <h3 className="fw-semibold m-0">
+                                                {plan.basePrice}€
+                                            </h3>
                                             {plan.extraPrice && (
-                                                <p className="mb-0">Hors forfait : {plan.extraPrice}€/H</p>
+                                                <span id={`pricing-extra-${plan.id}`} className="text-sm">
+                                                    + {plan.extraPrice}€ si nœuds
+                                                </span>
                                             )}
                                         </div>
                                     </div>
@@ -117,11 +101,12 @@ export default function Pricing() {
                     <div className="col">
                         <div className="bg-light-color p-4 rounded-3 shadow-sm h-100">
                             <div className="d-flex align-items-center gap-3 mb-3">
-                                <Image 
-                                    src="/image/photo-2.webp" 
+                                <MinioImage 
+                                    src="photo-2.webp" 
                                     alt="Forfait de base" 
                                     width={40} 
                                     height={40}
+                                    style={{ objectFit: 'cover' }}
                                 />
                                 <h5 className="fw-semibold m-0">FORFAIT DE BASE</h5>
                             </div>
@@ -134,11 +119,12 @@ export default function Pricing() {
                     <div className="col">
                         <div className="bg-light-color p-4 rounded-3 shadow-sm h-100">
                             <div className="d-flex align-items-center gap-3 mb-3">
-                                <Image 
-                                    src="/image/photo-2.webp" 
+                                <MinioImage 
+                                    src="photo-2.webp" 
                                     alt="Hors forfait" 
                                     width={40} 
                                     height={40}
+                                    style={{ objectFit: 'cover' }}
                                 />
                                 <h5 className="fw-semibold m-0">HORS FORFAIT</h5>
                             </div>
@@ -153,11 +139,12 @@ export default function Pricing() {
 
                 <div className="bg-light-color p-4 rounded-3 shadow-sm text-center">
                     <div className="d-flex align-items-center justify-content-center gap-3 mb-3">
-                        <Image 
-                            src="/image/photo-2.webp" 
-                            alt="Coupe des griffes" 
+                        <MinioImage 
+                            src="photo-2.webp" 
+                            alt="Coupe"
                             width={40} 
                             height={40}
+                            style={{ objectFit: 'cover' }}
                         />
                         <h5 className="fw-semibold m-0">COUPE DES GRIFFES SEULE</h5>
                     </div>

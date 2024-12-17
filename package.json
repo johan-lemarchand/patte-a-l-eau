@@ -9,10 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@aws-sdk/client-ses": "^3.714.0",
     "@johan27000/next-google-reviews": "^1.1.10",
-    "next": "15.0.2",
-    "react": "19.0.0-rc-02c0e824-20241028",
-    "react-dom": "19.0.0-rc-02c0e824-20241028"
+    "@react-email/components": "^0.0.31",
+    "@react-email/render": "^1.0.3",
+    "@types/minio": "^7.1.0",
+    "@types/react-google-recaptcha": "^2.1.9",
+    "minio": "^8.0.2",
+    "next": "^15.1.1",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-google-recaptcha": "^3.1.0",
+    "swiper": "^11.1.15"
   },
   "devDependencies": {
     "@types/node": "^20",
