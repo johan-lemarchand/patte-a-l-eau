@@ -154,24 +154,24 @@ export default function Contact() {
   return (
       <div id={contact.id} className="section">
         <div id="contact" className="r-container">
-          <div className="row row-cols-lg-3 row-cols-1">
+          <div className="row row-cols-lg-3 row-cols-1 align-items-stretch g-4">
             {contact.info.map((item) => (
-              <div key={item.id} id={item.id} className="col mb-3 px-lg-3 px-0">
-                <div className="p-lg-5 p-3 shadow-sm rounded-3 bg-light-color">
-                  <div className="d-flex flex-row gap-4 align-items-center">
+              <div key={item.id} id={item.id} className="col">
+                <div className="p-4 shadow-sm rounded-3 bg-light-color h-100">
+                  <div className="d-flex flex-row gap-3 align-items-center">
                     <div>
                       <div 
-                        className="bg-accent-color d-flex align-items-center justify-content-center rounded-circle p-3"
-                        style={{ width: '5rem', height: '5rem' }}
+                        className="bg-accent-color d-flex align-items-center justify-content-center rounded-circle p-2"
+                        style={{ width: '4rem', height: '4rem' }}
                       >
-                        <div className="fw-semibold text-white m-0" style={{ fontSize: '2rem' }}>
+                        <div className="fw-semibold text-white m-0" style={{ fontSize: '1.5rem' }}>
                           <i className={`fa-solid ${item.icon}`}></i>
                         </div>
                       </div>
                     </div>
-                    <div>
-                      <h5 className="m-0 fw-semibold">{item.title}</h5>
-                      <span dangerouslySetInnerHTML={{ __html: item.content }}></span>
+                    <div className="flex-grow-1">
+                      <h5 className="m-0 fw-semibold mb-1">{item.title}</h5>
+                      <span className="d-block" dangerouslySetInnerHTML={{ __html: item.content }}></span>
                     </div>
                   </div>
                 </div>
@@ -180,17 +180,17 @@ export default function Contact() {
           </div>
 
           <div className="d-flex flex-column">
-            <div className="mx-auto mb-3 text-center" style={{ maxWidth: '754px' }}>
+            <div className="mx-auto mb-3 mt-5 text-center" style={{ maxWidth: '754px' }}>
               <span id="contact-subtitle" className="font-1 accent-color-2 fs-3">
-                Nous sommes là pour vous aider
+                Je suis là pour vous aider
               </span>
               <div className="mb-4">
                 <h3 id="contact-title" className="font-2 fw-semibold">
-                  Contactez-nous
+                  Contactez-moi
                 </h3>
               </div>
               <p id="contact-description" className="text-gray">
-                Vous avez des questions ou des préoccupations ? N&apos;hésitez pas à nous contacter.
+                Vous avez des questions ou des préoccupations ? N&apos;hésitez pas à me contacter.
               </p>
             </div>
 

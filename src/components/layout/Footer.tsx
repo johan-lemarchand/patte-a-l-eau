@@ -35,7 +35,7 @@ export default function Footer() {
                                         <ul className="list gap-2">
                                             <li>
                                                 <i className="fa-solid fa-chevron-right fa-xs"></i>
-                                                <Link href="/" className="link">Home</Link>
+                                                <Link href="/" className="link">Accueil</Link>
                                             </li>
                                             <li>
                                                 <i className="fa-solid fa-chevron-right fa-xs"></i>
@@ -58,11 +58,11 @@ export default function Footer() {
                                         <ul className="list gap-2">
                                             <li>
                                                 <i className="fa-solid fa-chevron-right fa-xs"></i>
-                                                <Link href="/privacy" className="link">Privacy Policy</Link>
+                                                <Link href="/politique-confidentialite" className="link">Politique de confidentialité</Link>
                                             </li>
                                             <li>
                                                 <i className="fa-solid fa-chevron-right fa-xs"></i>
-                                                <Link href="/terms" className="link">Term & Condition</Link>
+                                                <Link href="/conditions-generales" className="link">Conditions générales</Link>
                                             </li>
                                             <li>
                                                 <i className="fa-solid fa-chevron-right fa-xs"></i>
@@ -128,12 +128,12 @@ export default function Footer() {
                 <div className="r-container py-3">
                     <div className="d-flex flex-lg-row flex-column gap-3 justify-content-between">
                         <div className="d-flex flex-row gap-3 justify-content-center">
-                            <Link href="/privacy" className="link text-gray">Privacy Policy</Link>
+                            <Link href="/politique-confidentialite" className="link text-gray">Politique de confidentialité</Link>
                             |
-                            <Link href="/terms" className="link text-gray">Term & Services</Link>
+                            <Link href="/conditions-generales" className="link text-gray">Conditions générales</Link>
                         </div>
                         <span className="text-gray text-center">
-                            Copyright  2024 Anstett Solutions pro. All Rights Reserved.
+                            Copyright {new Date().getFullYear()} Anstett Solutions pro. All Rights Reserved.
                         </span>
                     </div>
                 </div>

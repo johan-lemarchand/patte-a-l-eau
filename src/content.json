@@ -39,7 +39,7 @@
     "images": {
       "main": {
         "id": "banner-image",
-        "src": "photo-1.webp",
+        "src": "photo-principale-2.webp",
         "alt": "Banner Image"
       },
       "video": {
@@ -84,7 +84,7 @@
         "id": "service-3",
         "title": "Attention Personnalisée pour Chaque Animal",
         "description": "Chaque animal est unique et mérite une attention particulière. Clara prend le temps de s'adapter aux besoins et aux préférences de votre compagnon.",
-        "image": "photo-2.webp",
+        "image": "photo-principale.webp",
         "alt": "Attention Personnalisée"
       }
     ]
@@ -255,7 +255,7 @@
         "title": "FORFAIT DE BASE",
         "description": "Le forfait de base comprend le bain, le séchage, la coupe, la coupe des griffes, le nettoyage des yeux + oreilles et les finitions.",
         "image": {
-          "src": "photo-12.webp",
+          "src": "patte.webp",
           "alt": "Forfait de base"
         }
       },
@@ -264,7 +264,7 @@
         "title": "HORS FORFAIT",
         "description": "Le hors forfait comprend le temps de démêlage supplémentaire, l'utilisation de produits antiparasitaires, la gestion des comportements difficiles et le dépassement du créneau de deux heures.",
         "image": {
-          "src": "photo-13.webp",
+          "src": "patte.webp",
           "alt": "Hors forfait"
         }
       },
@@ -273,7 +273,7 @@
         "title": "COUPE DES GRIFFES SEULE",
         "description": "Coupe des griffes hors prestation de toilettage : 10€",
         "image": {
-          "src": "photo-14.webp",
+          "src": "patte.webp",
           "alt": "Coupe des griffes"
         }
       },
@@ -361,7 +361,7 @@
     "images": {
       "main": {
         "id": "faq-image",
-        "src": "boutique.webp",
+        "src": "faq.webp",
         "alt": "FAQ illustration"
       }
     }
@@ -438,42 +438,38 @@
         "id": "contact-email",
         "icon": "fa-envelope",
         "title": "Email",
-        "content": "hello@domainsite.com"
+        "content": "pattesaleautoilettage@gmail.com"
       }
     ]
   },
   "partners": {
     "id": "partners-section",
+    "texts": {
+      "subtitle": {
+        "id": "partners-subtitle",
+        "text": "Mes Partenaires"
+      },
+      "title": {
+        "id": "partners-title",
+        "text": "Mes Engagements et Partenariats"
+      }
+    },
     "items": [
       {
         "id": "partner-1",
-        "logo": "logo-ipsum-2.png",
-        "name": "Partenaire 1",
-        "url": "https://partenaire1.com"
+        "title": "Point de Collecte - La Porte de l'Espoir",
+        "description": "En tant que point de collecte officiel pour l'association La Porte de l'Espoir, nous acceptons vos dons pour aider les animaux dans le besoin. Vous pouvez déposer : nourriture pour chiens et chats, friandises, jouets, coussins, litière et tout autre accessoire pour animaux.",
+        "url": "https://laportedelespoir.org/",
+        "buttonText": "Découvrir l'association",
+        "type": "association"
       },
       {
         "id": "partner-2",
-        "logo": "logo-ipsum-3.png",
-        "name": "Partenaire 2",
-        "url": "https://partenaire2.com"
-      },
-      {
-        "id": "partner-3",
-        "logo": "logo-ipsum-4.png",
-        "name": "Partenaire 3",
-        "url": "https://partenaire3.com"
-      },
-      {
-        "id": "partner-4",
-        "logo": "logo-ipsum-5.png",
-        "name": "Partenaire 4",
-        "url": "https://partenaire4.com"
-      },
-      {
-        "id": "partner-5",
-        "logo": "logo-ipsum-6.png",
-        "name": "Partenaire 5",
-        "url": "https://partenaire5.com"
+        "title": "Heaven's Croquettes",
+        "description": "Heaven's Croquettes propose une alimentation saine et naturelle pour vos animaux. Ces croquettes sont fabriquées en France, sans céréales, avec des ingrédients de haute qualité et une forte teneur en viande fraîche. Leur composition unique respecte les besoins nutritionnels de votre animal tout en étant facilement digestible.",
+        "url": "https://www.heavenscroquettes.com/",
+        "buttonText": "Découvrir les produits",
+        "type": "product"
       }
     ]
   },
