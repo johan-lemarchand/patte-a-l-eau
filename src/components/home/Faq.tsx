@@ -68,7 +68,7 @@ export default function Faq() {
                     <div className="col">
                         <div className="position-relative">
                             <MinioImage
-                                src="/photo-1.webp"
+                                src="/boutique.webp"
                                 alt="FAQ illustration"
                                 width={600}
                                 height={700}

@@ -44,7 +44,7 @@
       },
       "video": {
         "id": "banner-video-thumbnail",
-        "src": "photo-2.webp",
+        "src": "entree-salon.webp",
         "alt": "Video Thumbnail"
       }
     }
@@ -70,14 +70,14 @@
         "id": "service-1",
         "title": "Installations Confortables",
         "description": "Un espace calme et accueillant, conçu pour le bien-être de votre animal et pour réduire le stress pendant les soins.",
-        "image": "photo-2.webp",
+        "image": "photo-perso.webp",
         "alt": "Installations Confortables"
       },
       {
         "id": "service-2",
         "title": "Soins de Toilettage Professionnels",
         "description": "Des soins complets et personnalisés adaptés aux besoins de chaque race, réalisés avec des produits de qualité.",
-        "image": "photo-2.webp",
+        "image": "interieur-salon.webp",
         "alt": "Soins de Toilettage Professionnels"
       },
       {
@@ -107,49 +107,179 @@
         "title": "CHATS",
         "basePrice": 50,
         "image": {
-          "src": "photo-2.webp",
+          "src": "chat.webp",
           "alt": "Forfait Chats"
         }
       },
       {
         "id": "pricing-plan-2",
-        "title": "PETIT GABARIT [< 10 KGS]",
-        "basePrice": 45,
-        "extraPrice": 20,
+        "title": "TRÈS PETIT GABARIT [< 6 KGS]",
+        "description": "Chihuahua, Yorkshire Toy...",
+        "basePrice": 40,
+        "extraPrice": 30,
+        "serviceDetails": [
+          {
+            "name": "Bain, brushing, retaillage poil",
+            "price": 40
+          },
+          {
+            "name": "Tonte",
+            "price": 50
+          },
+          {
+            "name": "Coupe ciseaux",
+            "price": 60
+          },
+          {
+            "name": "Épilation",
+            "price": 70
+          }
+        ],
         "image": {
-          "src": "photo-2.webp",
-          "alt": "Forfait Petit Gabarit"
+          "src": "petit-chien-1.webp",
+          "alt": "Forfait Très Petit Gabarit"
         }
       },
       {
         "id": "pricing-plan-3",
-        "title": "GABARIT MOYEN [< 20 KGS]",
-        "basePrice": 60,
-        "extraPrice": 30,
+        "title": "PETIT GABARIT [< 15 KGS]",
+        "description": "Yorkshire, Cavalier King Charles, Shih-tzu...",
+        "services": [
+          {
+            "name": "Bain, brushing, retaillage poil",
+            "price": 45
+          },
+          {
+            "name": "Tonte",
+            "price": 55
+          },
+          {
+            "name": "Coupe ciseaux",
+            "price": 65
+          },
+          {
+            "name": "Épilation",
+            "price": 75
+          }
+        ],
         "image": {
-          "src": "photo-2.webp",
-          "alt": "Forfait Gabarit Moyen"
+          "src": "petit-chien-2.webp",
+          "alt": "Forfait Petit Gabarit"
         }
       },
       {
         "id": "pricing-plan-4",
-        "title": "GRAND GABARIT [< 40 KGS]",
-        "basePrice": 70,
-        "extraPrice": 35,
+        "title": "GABARIT MOYEN [< 25 KGS]",
+        "description": "Beagle, Jagd Terrier, Cocker...",
+        "services": [
+          {
+            "name": "Bain, brushing, retaillage poil",
+            "price": 55
+          },
+          {
+            "name": "Tonte",
+            "price": 65
+          },
+          {
+            "name": "Coupe ciseaux",
+            "price": 75
+          },
+          {
+            "name": "Épilation",
+            "price": 85
+          }
+        ],
         "image": {
-          "src": "photo-2.webp",
-          "alt": "Forfait Grand Gabarit"
+          "src": "chien-moyen.webp",
+          "alt": "Forfait Gabarit Moyen"
         }
       },
       {
         "id": "pricing-plan-5",
-        "title": "TRÈS GRAND GABARIT [> 40 KGS]",
-        "basePrice": 90,
-        "extraPrice": 40,
+        "title": "GRAND GABARIT [< 40 KGS]",
+        "description": "Berger Australien, Rottweiler...",
+        "services": [
+          {
+            "name": "Bain, brushing, retaillage poil",
+            "price": 65
+          },
+          {
+            "name": "Tonte",
+            "price": 75
+          },
+          {
+            "name": "Coupe ciseaux",
+            "price": 85
+          },
+          {
+            "name": "Épilation",
+            "price": 95
+          }
+        ],
         "image": {
-          "src": "photo-2.webp",
+          "src": "grand-gabarit.webp",
+          "alt": "Forfait Grand Gabarit"
+        }
+      },
+      {
+        "id": "pricing-plan-6",
+        "title": "TRÈS GRAND GABARIT [> 40 KGS]",
+        "description": "Terre Neuve...",
+        "services": [
+          {
+            "name": "Bain, brushing, retaillage poil",
+            "price": 75
+          },
+          {
+            "name": "Tonte",
+            "price": 85
+          },
+          {
+            "name": "Coupe ciseaux",
+            "price": 95
+          },
+          {
+            "name": "Épilation",
+            "price": 105
+          }
+        ],
+        "image": {
+          "src": "tres-gros-chien.webp",
           "alt": "Forfait Très Grand Gabarit"
         }
+      }
+    ],
+    "sous-plan": [
+      {
+        "id": "pricing-sous-plan-1",
+        "title": "FORFAIT DE BASE",
+        "description": "Le forfait de base comprend le bain, le séchage, la coupe, la coupe des griffes, le nettoyage des yeux + oreilles et les finitions.",
+        "image": {
+          "src": "photo-12.webp",
+          "alt": "Forfait de base"
+        }
+      },
+      {
+        "id": "pricing-sous-plan-2",
+        "title": "HORS FORFAIT",
+        "description": "Le hors forfait comprend le temps de démêlage supplémentaire, l'utilisation de produits antiparasitaires, la gestion des comportements difficiles et le dépassement du créneau de deux heures.",
+        "image": {
+          "src": "photo-13.webp",
+          "alt": "Hors forfait"
+        }
+      },
+      {
+        "id": "pricing-sous-plan-3",
+        "title": "COUPE DES GRIFFES SEULE",
+        "description": "Coupe des griffes hors prestation de toilettage : 10€",
+        "image": {
+          "src": "photo-14.webp",
+          "alt": "Coupe des griffes"
+        }
+      },
+      {
+        "id": "pricing-sous-plan-alert",
+        "alert": "Tout retard de 15 min est obligatoirement annulé et devra être décalé à un autre jour car cela engendre des retards pour les autres prestations que je ne peux faire aux autres clients."
       }
     ]
   },
@@ -205,13 +335,33 @@
       {
         "id": "faq-4",
         "question": "Quels sont les moyens de paiement acceptés ?",
-        "answer": "J'accepte les paiements par carte bancaire, espèces et chèques."
+        "answer": "J'accepte les paiements par espèce, chèque, PayPal, Paylib, Lifpay ou virement bancaire en instantané."
+      },
+      {
+        "id": "faq-5",
+        "question": "Quels produits utilisez-vous pour le toilettage ?",
+        "answer": "J'utilise la gamme Petux qui est une gamme vegan et eco responsable."
+      },
+      {
+        "id": "faq-6",
+        "question": "Que sont les Fleurs de Bach ?",
+        "answer": "Les Fleurs de Bach Velbecia sont fabriquées en France selon la méthode du Dr Bach et pour le bien-être de nos animaux. Ces élixirs floraux permettent d'agir et de rééquilibrer le système émotionnel des petits comme des grands animaux. Chaque formule est liée à un trouble précis et se compose d'une synergie de fleurs."
+      },
+      {
+        "id": "faq-7",
+        "question": "Quelle est la composition des Fleurs de Bach ?",
+        "answer": "Les Fleurs de Bach ne contiennent ni gluten ni allergène. Ingrédients : Eau, Extrait d'arôme de sirop d'érable, Extraits de fleurs de Bach."
+      },
+      {
+        "id": "faq-8",
+        "question": "Proposez-vous d'autres produits à la vente ?",
+        "answer": "Oui, je propose à la vente des croquettes, des friandises ainsi que des produits d'entretien du poil pour prendre soin de vos animaux entre les séances de toilettage."
       }
     ],
     "images": {
       "main": {
         "id": "faq-image",
-        "src": "photo-1.webp",
+        "src": "boutique.webp",
         "alt": "FAQ illustration"
       }
     }
@@ -228,12 +378,12 @@
         "text": "Rencontrez Clara, votre toiletteuse dédiée"
       },
       "description": [
-        "Je m'appelle Clara, artisan toiletteuse spécialisée pour chiens et chats. Basée à Auenheim Rountzenheim, j'ai suivi une formation de toilettage canin et félin en 2022, ce qui m'a permis d'obtenir un diplôme et de transformer ma passion en métier.",
+        "Je m'appelle Clara, artisan toiletteuse spécialisée pour chiens et chats. Basée à Auenheim Rountzenheim, j'ai suivi une formation de toilettage canin et félin en 2023, ce qui m'a permis d'obtenir un diplôme et de transformer ma passion en métier. En 2024 j'ai également obtenu le diplôme de practienne en fleurs de Bach pour animaux.",
         "Forte de mon expérience au sein d'une association de protection animale pendant de nombreuses années, je suis pleinement dévouée au bien-être de vos compagnons. J'ai hâte de prendre soin de votre loulou dans un environnement calme et attentionné, en veillant à chaque détail pour leur confort et leur beauté."
       ]
     },
     "image": {
-      "src": "photo-3.webp",
+      "src": "clara-photo.webp",
       "alt": "About"
     },
     "stats": {

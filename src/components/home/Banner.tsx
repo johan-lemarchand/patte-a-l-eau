@@ -1,10 +1,35 @@
+'use client'
+
 import MinioImage from '@/components/common/MinioImage'
 import Link from 'next/link'
 import content from '@/content.json'
+import { useEffect } from 'react'
 
 export default function Banner() {
   const { banner } = content;
-  
+
+  useEffect(() => {
+    // Gestionnaire pour démarrer la vidéo quand la modal s'ouvre
+    const videoModal = document.getElementById('videoModal');
+    if (videoModal) {
+      videoModal.addEventListener('shown.bs.modal', function () {
+        const video = document.getElementById('bannerVideo') as HTMLVideoElement;
+        if (video) {
+          video.play();
+        }
+      });
+
+      // Arrêter la vidéo quand la modal se ferme
+      videoModal.addEventListener('hidden.bs.modal', function () {
+        const video = document.getElementById('bannerVideo') as HTMLVideoElement;
+        if (video) {
+          video.pause();
+          video.currentTime = 0;
+        }
+      });
+    }
+  }, []);
+
   return (
     <div className="section pt-lg-0">
       <div className="r-container">
@@ -62,7 +87,7 @@ export default function Banner() {
                         type="button" 
                         className="btn request-loader" 
                         data-bs-toggle="modal"
-                        data-bs-target="#e119"
+                        data-bs-target="#videoModal"
                       >
                         <i className="fa-solid fa-play ms-1"></i>
                       </button>
@@ -77,13 +102,36 @@ export default function Banner() {
                     className="w-100 img-fluid"
                   />
                 </div>
-                <div className="modal fade bg-overlay" id="e119" tabIndex={-1} aria-hidden="true">
+                <div 
+                  className="modal fade" 
+                  id="videoModal" 
+                  tabIndex={-1} 
+                  aria-hidden="true"
+                >
                   <div className="modal-dialog modal-dialog-centered modal-lg">
-                    <div className="modal-content bg-dark-color">
-                      <iframe 
-                        className="ifr-video"
-                        src="https://www.youtube.com/embed/FK2RaJ1EfA8?autoplay=1"
-                      />
+                    <div className="modal-content">
+                      <div className="modal-header">
+                        <button 
+                          type="button" 
+                          className="btn-close" 
+                          data-bs-dismiss="modal" 
+                          aria-label="Close"
+                        ></button>
+                      </div>
+                      <div className="modal-body p-0">
+                        <video 
+                          id="bannerVideo"
+                          controls 
+                          className="w-100"
+                          style={{ maxHeight: '80vh' }}
+                        >
+                          <source 
+                            src={`https://${process.env.NEXT_PUBLIC_MINIO_ENDPOINT}/${process.env.NEXT_PUBLIC_MINIO_BUCKET_NAME}/711dd14577bdd6ffe207d1afe8a01682.mp4`}
+                            type="video/mp4"
+                          />
+                          Votre navigateur ne supporte pas la lecture de vidéos.
+                        </video>
+                      </div>
                     </div>
                   </div>
                 </div>

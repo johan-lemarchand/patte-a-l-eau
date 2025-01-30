@@ -257,7 +257,7 @@ export default function Contact() {
                       name="first_name" 
                       placeholder="Votre nom" 
                       required 
-                      pattern="[A-Za-zÀ-ÿ-' ]{2,50}"
+                      pattern="[A-Za-z\u00C0-\u017F\- ']{2,50}"
                       value={formData.first_name}
                       onChange={handleInputChange}
                     />
@@ -272,7 +272,7 @@ export default function Contact() {
                       name="last_name" 
                       placeholder="Votre prénom" 
                       required 
-                      pattern="[A-Za-zÀ-ÿ-' ]{2,50}"
+                      pattern="[A-Za-z\u00C0-\u017F\- ']{2,50}"
                       value={formData.last_name}
                       onChange={handleInputChange}
                     />
@@ -290,7 +290,7 @@ export default function Contact() {
                       name="email" 
                       placeholder="Email" 
                       required 
-                      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                      pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}"
                       value={formData.email}
                       onChange={handleInputChange}
                     />

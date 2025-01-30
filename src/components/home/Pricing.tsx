@@ -1,16 +1,38 @@
 import MinioImage from '@/components/common/MinioImage'
 import content from '@/content.json'
 
-interface PricingPlan {
+interface PricingService {
+    name: string;
+    price: number;
+}
+
+interface BasePricingPlan {
     id: string;
     title: string;
-    basePrice: number;
-    extraPrice?: number;
+    description?: string;
     image: {
         src: string;
         alt: string;
     };
+    basePrice?: number;
+    extraPrice?: number;
+    services?: PricingService[];
+}
+
+interface PricingPlan extends BasePricingPlan {
     variant: 'light' | 'green' | 'accent';
+}
+
+// Ajout de l'interface pour sous-plan
+interface SousPlan {
+    id: string;
+    title?: string;
+    description?: string;
+    alert?: string;
+    image?: {
+        src: string;
+        alt: string;
+    };
 }
 
 export default function Pricing() {
@@ -36,8 +58,7 @@ export default function Pricing() {
         }
     };
 
-    // Assigner les variants aux plans
-    const pricingPlansWithVariants = pricing.plans.map((plan, index) => {
+    const pricingPlansWithVariants: PricingPlan[] = pricing.plans.map((plan: BasePricingPlan, index) => {
         let variant: PricingPlan['variant'];
         if (index % 3 === 0) variant = 'light';
         else if (index % 3 === 1) variant = 'green';
@@ -80,14 +101,31 @@ export default function Pricing() {
                                         <h5 id={`pricing-title-${plan.id}`} className="fw-semibold mb-3">
                                             {plan.title}
                                         </h5>
+                                        {plan.description && (
+                                            <p className="text-sm mb-3">
+                                                {plan.description}
+                                            </p>
+                                        )}
                                         <div id={`pricing-price-${plan.id}`} className="d-flex flex-column gap-2 mb-3">
-                                            <h3 className="fw-semibold m-0">
-                                                {plan.basePrice}€
-                                            </h3>
-                                            {plan.extraPrice && (
-                                                <span id={`pricing-extra-${plan.id}`} className="text-sm">
-                                                    + {plan.extraPrice}€ si nœuds
-                                                </span>
+                                            {plan.services ? (
+                                                <div className="d-flex flex-column gap-2">
+                                                    {plan.services.map((service, index) => (
+                                                        <div key={index} className="d-flex justify-content-between align-items-center">
+                                                            <span className="text-sm">{service.name}</span>
+                                                            <span className="fw-semibold">à partir de {service.price}€</span>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            ) : (
+                                                <>
+                                                    <h3 className="fw-semibold m-0">
+                                                        {plan.basePrice}€
+                                                    </h3>
+                                                    {plan.extraPrice && (
+                                                        <span id={`pricing-extra-${plan.id}`} className="text-sm">
+                                                        </span>
+                                                    )}
+                                                </>
                                             )}
                                         </div>
                                     </div>
@@ -98,61 +136,49 @@ export default function Pricing() {
                 </div>
 
                 <div className="row row-cols-1 row-cols-md-2 g-4 mb-5">
-                    <div className="col">
-                        <div className="bg-light-color p-4 rounded-3 shadow-sm h-100">
-                            <div className="d-flex align-items-center gap-3 mb-3">
-                                <MinioImage 
-                                    src="photo-2.webp" 
-                                    alt="Forfait de base" 
-                                    width={40} 
-                                    height={40}
-                                    style={{ objectFit: 'cover' }}
-                                />
-                                <h5 className="fw-semibold m-0">FORFAIT DE BASE</h5>
+                    {pricing['sous-plan'].slice(0, 2).map((plan: SousPlan) => (
+                        <div key={plan.id} className="col">
+                            <div className="bg-light-color p-4 rounded-3 shadow-sm h-100">
+                                <div className="d-flex align-items-center gap-3 mb-3">
+                                    {plan.image && (
+                                        <MinioImage 
+                                            src={plan.image.src}
+                                            alt={plan.image.alt}
+                                            width={40} 
+                                            height={40}
+                                            style={{ objectFit: 'cover' }}
+                                        />
+                                    )}
+                                    {plan.title && <h5 className="fw-semibold m-0">{plan.title}</h5>}
+                                </div>
+                                {plan.description && <p className="mb-0">{plan.description}</p>}
                             </div>
-                            <p className="mb-0">
-                                Le forfait de base comprend le bain, le séchage, la coupe, la coupe des griffes, 
-                                le nettoyage des yeux + oreilles et les finitions.
-                            </p>
                         </div>
-                    </div>
-                    <div className="col">
-                        <div className="bg-light-color p-4 rounded-3 shadow-sm h-100">
-                            <div className="d-flex align-items-center gap-3 mb-3">
-                                <MinioImage 
-                                    src="photo-2.webp" 
-                                    alt="Hors forfait" 
-                                    width={40} 
-                                    height={40}
-                                    style={{ objectFit: 'cover' }}
-                                />
-                                <h5 className="fw-semibold m-0">HORS FORFAIT</h5>
-                            </div>
-                            <p className="mb-0">
-                                Le hors forfait comprend le temps de démêlage supplémentaire, 
-                                l&apos;utilisation de produits antiparasitaires, la gestion des 
-                                comportements difficiles et le dépassement du créneau de deux heures.
-                            </p>
-                        </div>
-                    </div>
+                    ))}
                 </div>
 
                 <div className="bg-light-color p-4 rounded-3 shadow-sm text-center">
-                    <div className="d-flex align-items-center justify-content-center gap-3 mb-3">
-                        <MinioImage 
-                            src="photo-2.webp" 
-                            alt="Coupe"
-                            width={40} 
-                            height={40}
-                            style={{ objectFit: 'cover' }}
-                        />
-                        <h5 className="fw-semibold m-0">COUPE DES GRIFFES SEULE</h5>
-                    </div>
-                    <p className="mb-0">Coupe des griffes hors prestation de toilettage : 10€</p>
+                    {pricing['sous-plan'].slice(2, 3).map((plan: SousPlan) => (
+                        <div key={plan.id}>
+                            <div className="d-flex align-items-center justify-content-center gap-3 mb-3">
+                                {plan.image && (
+                                    <MinioImage 
+                                        src={plan.image.src}
+                                        alt={plan.image.alt}
+                                        width={40} 
+                                        height={40}
+                                        style={{ objectFit: 'cover' }}
+                                    />
+                                )}
+                                {plan.title && <h5 className="fw-semibold m-0">{plan.title}</h5>}
+                            </div>
+                            {plan.description && <p className="mb-0">{plan.description}</p>}
+                        </div>
+                    ))}
                 </div>
 
                 <div className="alert alert-warning mt-5 text-center" role="alert">
-                    Tout retard de 15 min est obligatoirement annulé et devra être décalé à un autre jour car cela engendre des retards pour les autres prestations que je ne peux faire aux autres clients.
+                    {pricing['sous-plan'][3].alert}
                 </div>
             </div>
         </div>

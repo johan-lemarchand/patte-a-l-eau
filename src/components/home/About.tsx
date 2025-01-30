@@ -18,9 +18,9 @@ export default function About() {
                                     className="img-fluid"
                                 />
                             </div>
-                            <div className="position-absolute start-0 top-0" style={{ zIndex: 2 }}>
+                            <div className="position-absolute start-0 bottom-0" style={{ zIndex: 2 }}>
                                 <div className="bg-accent-color rounded-3 d-flex align-items-center gap-3 px-5 py-3 text-white">
-                                    <div style={{ fontSize: '3rem' }}>
+                                    <div style={{ fontSize: '2rem' }}>
                                         <i className="fa-solid fa-paw"></i>
                                     </div>
                                     <div>

@@ -99,11 +99,11 @@ export default function Footer() {
                                     </li>
                                     <li>
                                         <a 
-                                            href="mailto:hello@domainsite.com"
+                                            href="mailto:pattesaleautoilettage@gmail.com"
                                             className="link"
                                         >
                                             <i className="fa fa-envelope me-2"></i>
-                                            hello@domainsite.com
+                                            pattesaleautoilettage@gmail.com
                                         </a>
                                     </li>
                                 </ul>
