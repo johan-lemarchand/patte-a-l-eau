@@ -1,3 +1,13 @@
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Politique de Confidentialité',
+  description: 'Politique de confidentialité du salon de toilettage Patte à l\'eau. Découvrez comment nous protégeons vos données personnelles.',
+  alternates: {
+    canonical: 'https://pattesaleau-toilettage.fr/politique-confidentialite'
+  }
+}
+
 export default function PolitiqueConfidentialite() {
     return (
         <div className="section">
@@ -21,13 +31,13 @@ export default function PolitiqueConfidentialite() {
                 </ul>
 
                 <h2 className="mt-5 mb-3">3. Protection des informations</h2>
-                <p>Nous mettons en place des mesures de sécurité pour protéger vos informations personnelles. Vos données sont conservées de manière sécurisée et ne sont accessibles qu'aux personnes autorisées.</p>
+                <p>Nous mettons en place des mesures de sécurité pour protéger vos informations personnelles. Vos données sont conservées de manière sécurisée et ne sont accessibles qu&apos;aux personnes autorisées.</p>
 
                 <h2 className="mt-5 mb-3">4. Cookies</h2>
                 <p>Notre site utilise des cookies pour améliorer votre expérience de navigation. Vous pouvez désactiver les cookies dans les paramètres de votre navigateur.</p>
 
                 <h2 className="mt-5 mb-3">5. Contact</h2>
-                <p>Pour toute question concernant notre politique de confidentialité, vous pouvez nous contacter à pattesaleautoilettage@gmail.com</p>
+                <p>Pour toute question concernant notre politique de confidentialité, vous pouvez nous contacter à l&apos;adresse pattesaleautoilettage@gmail.com</p>
             </div>
         </div>
     )

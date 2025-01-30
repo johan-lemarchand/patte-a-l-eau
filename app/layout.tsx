@@ -17,8 +17,46 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Patte à l'eau",
-  description: "Services pour animaux de compagnie",
+  title: {
+    default: 'Patte à l\'eau | Toilettage pour chiens et chats à Rountzenheim-Auenheim',
+    template: '%s | Patte à l\'eau'
+  },
+  description: 'Salon de toilettage professionnel pour chiens et chats à Rountzenheim-Auenheim. Services de toilettage, bain, coupe et soins adaptés à chaque animal.',
+  keywords: ['toilettage', 'chien', 'chat', 'Rountzenheim', 'Auenheim', 'Alsace', 'toiletteur', 'animaux'],
+  authors: [{ name: 'Clara' }],
+  creator: 'Clara',
+  metadataBase: new URL('https://pattesaleau-toilettage.fr'),
+  openGraph: {
+    type: 'website',
+    locale: 'fr_FR',
+    url: 'https://pattesaleau-toilettage.fr',
+    title: 'Patte à l\'eau | Toilettage pour chiens et chats',
+    description: 'Salon de toilettage professionnel à Rountzenheim-Auenheim. Services personnalisés pour le bien-être de vos animaux.',
+    siteName: 'Patte à l\'eau',
+    images: [{
+      url: '/og-logo.jpg',
+      width: 1200,
+      height: 630,
+      alt: 'Patte à l\'eau - Toilettage pour chiens et chats à Rountzenheim-Auenheim'
+    }]
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'fFGYn-20JhShCB1Lg5yOrLuiaZFBByGL_6JtqV7dr2A'
+  },
+  alternates: {
+    canonical: 'https://pattesaleau-toilettage.fr'
+  }
 };
 
 export default function RootLayout({
@@ -34,6 +72,14 @@ export default function RootLayout({
           rel="stylesheet" 
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
         />
+        {/* Favicons */}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
+        <meta name="msapplication-TileColor" content="#da532c" />
+        <meta name="theme-color" content="#ffffff" />
       </head>
       <body 
         className={`${geistSans.variable} ${geistMono.variable}`}
