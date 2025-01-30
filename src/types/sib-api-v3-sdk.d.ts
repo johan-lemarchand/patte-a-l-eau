@@ -8,8 +8,14 @@ declare module 'sib-api-v3-sdk' {
         };
     }
 
+    interface SendEmailResponse {
+        messageId: string;
+        code: number;
+        message: string;
+    }
+
     export class TransactionalEmailsApi {
-        sendTransacEmail(sendSmtpEmail: SendSmtpEmail): Promise<any>;
+        sendTransacEmail(sendSmtpEmail: SendSmtpEmail): Promise<SendEmailResponse>;
     }
 
     export class SendSmtpEmail {
