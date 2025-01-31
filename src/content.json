@@ -23,7 +23,7 @@
       },
       "description": {
         "id": "banner-description",
-        "text": "Au salon de toilettage Pattes à l'eau, nous sommes dédiés à fournir un soin attentif et complet pour vos animaux. De la toilettage à l'hébergement, nous nous assurons que vos compagnons sont heureux et bien entretenus."
+        "text": "Au salon de toilettage Pattes à l'eau, nous offrons des soins complets et attentionnés pour vos animaux. Nous veillons à leur bien-être en leur apportant un toilettage de qualité."
       },
       "buttons": {
         "primary": {
@@ -105,7 +105,20 @@
       {
         "id": "pricing-plan-1",
         "title": "CHATS",
-        "basePrice": 50,
+        "services": [
+          {
+            "name": "Brossage / retaillage",
+            "price": 30
+          },
+          {
+            "name": "Bain/ séchage brossage",
+            "price": 40
+          },
+          {
+            "name": "Tonte",
+            "price": 40
+          }
+        ],
         "image": {
           "src": "chat.webp",
           "alt": "Forfait Chats"
@@ -115,24 +128,18 @@
         "id": "pricing-plan-2",
         "title": "TRÈS PETIT GABARIT [< 6 KGS]",
         "description": "Chihuahua, Yorkshire Toy...",
-        "basePrice": 40,
-        "extraPrice": 30,
-        "serviceDetails": [
+        "services": [
           {
             "name": "Bain, brushing, retaillage poil",
-            "price": 40
+            "price": 30
           },
           {
             "name": "Tonte",
-            "price": 50
-          },
-          {
-            "name": "Coupe ciseaux",
-            "price": 60
+            "price": 45
           },
           {
             "name": "Épilation",
-            "price": 70
+            "price": 55
           }
         ],
         "image": {
@@ -387,7 +394,7 @@
       "alt": "About"
     },
     "stats": {
-      "count": "2K",
+      "count": "≈ 300",
       "text": "boules de poils satisfaites"
     },
     "features": [
