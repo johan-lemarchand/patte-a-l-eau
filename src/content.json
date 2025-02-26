@@ -204,25 +204,7 @@
       {
         "id": "pricing-plan-5",
         "title": "GRAND GABARIT [< 40 KGS]",
-        "description": "Berger Australien, Rottweiler...",
-        "services": [
-          {
-            "name": "Bain, brushing, retaillage poil",
-            "price": 65
-          },
-          {
-            "name": "Tonte",
-            "price": 75
-          },
-          {
-            "name": "Coupe ciseaux",
-            "price": 85
-          },
-          {
-            "name": "Épilation",
-            "price": 95
-          }
-        ],
+        "description": "Berger Australien, Rottweiler..., 45 Euros de l'heure",
         "image": {
           "src": "grand-gabarit.webp",
           "alt": "Forfait Grand Gabarit"
@@ -231,25 +213,7 @@
       {
         "id": "pricing-plan-6",
         "title": "TRÈS GRAND GABARIT [> 40 KGS]",
-        "description": "Terre Neuve...",
-        "services": [
-          {
-            "name": "Bain, brushing, retaillage poil",
-            "price": 75
-          },
-          {
-            "name": "Tonte",
-            "price": 85
-          },
-          {
-            "name": "Coupe ciseaux",
-            "price": 95
-          },
-          {
-            "name": "Épilation",
-            "price": 105
-          }
-        ],
+        "description": "Terre Neuve..., 50 Euros de l'heure",
         "image": {
           "src": "tres-gros-chien.webp",
           "alt": "Forfait Très Grand Gabarit"

@@ -107,7 +107,7 @@ export default function Pricing() {
                                             </p>
                                         )}
                                         <div id={`pricing-price-${plan.id}`} className="d-flex flex-column gap-2 mb-3">
-                                            {plan.services ? (
+                                            {plan.services && plan.services.length > 0 ? (
                                                 <div className="d-flex flex-column gap-2">
                                                     {plan.services.map((service, index) => (
                                                         <div key={index} className="d-flex justify-content-between align-items-center">
@@ -116,17 +116,14 @@ export default function Pricing() {
                                                         </div>
                                                     ))}
                                                 </div>
-                                            ) : (
+                                            ) : plan.basePrice !== undefined && plan.basePrice !== null ? (
                                                 <>
-                                                    <h3 className="fw-semibold m-0">
-                                                        {plan.basePrice}€
-                                                    </h3>
+                                                    <h3 className="fw-semibold m-0">{plan.basePrice}€</h3>
                                                     {plan.extraPrice && (
-                                                        <span id={`pricing-extra-${plan.id}`} className="text-sm">
-                                                        </span>
+                                                        <span id={`pricing-extra-${plan.id}`} className="text-sm"></span>
                                                     )}
                                                 </>
-                                            )}
+                                            ) : null}
                                         </div>
                                     </div>
                                 </div>
