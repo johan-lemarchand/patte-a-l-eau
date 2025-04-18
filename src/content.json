@@ -177,7 +177,7 @@
       {
         "id": "pricing-plan-4",
         "title": "GABARIT MOYEN [< 25 KGS]",
-        "description": "Beagle, Jagd Terrier, Cocker...",
+        "description": "Chien moyen à poils courts (staffie, basset, beagle, bull terrier) : 40€<br />Beagle, Jagd Terrier, Cocker...",
         "services": [
           {
             "name": "Bain, brushing, retaillage poil",
@@ -204,7 +204,7 @@
       {
         "id": "pricing-plan-5",
         "title": "GRAND GABARIT [< 40 KGS]",
-        "description": "Berger Australien, Rottweiler..., 45 Euros de l'heure",
+        "description": "Grand chien poils courts (labrador, rottweiler, Dalmatien ect) : à partir de 45€<br />Grand chien poils long (border collie, berger australien, berger allemand) : à partir de 65€<br />Grand chien Nordique (malamute, husky, bobtail, bouvier bernois) : 45€ / l'heure",
         "image": {
           "src": "grand-gabarit.webp",
           "alt": "Forfait Grand Gabarit"

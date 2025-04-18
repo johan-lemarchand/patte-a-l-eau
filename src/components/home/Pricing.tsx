@@ -102,9 +102,10 @@ export default function Pricing() {
                                             {plan.title}
                                         </h5>
                                         {plan.description && (
-                                            <p className="text-sm mb-3">
-                                                {plan.description}
-                                            </p>
+                                            <p
+                                                className="text-sm mb-3"
+                                                dangerouslySetInnerHTML={{ __html: plan.description }}
+                                            />
                                         )}
                                         <div id={`pricing-price-${plan.id}`} className="d-flex flex-column gap-2 mb-3">
                                             {plan.services && plan.services.length > 0 ? (
