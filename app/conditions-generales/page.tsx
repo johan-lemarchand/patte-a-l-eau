@@ -31,6 +31,14 @@ export default function ConditionsGenerales() {
 
                 <h2 className="mt-5 mb-3">6. Modification des conditions</h2>
                 <p>Nous nous réservons le droit de modifier ces conditions à tout moment. Les modifications seront effectives dès leur publication sur notre site.</p>
+
+                <h2 className="mt-5 mb-3">7. Informations entreprise</h2>
+                <p>
+                    SIREN : 977 585 207
+                    SIRET (siège social) : 977 585 207 00011
+                    TVA intracommunautaire : FR15977585207
+                    Code NAF / APE : 9609Z – Autres services personnels n.c.a.
+                </p>
             </div>
         </div>
     )
