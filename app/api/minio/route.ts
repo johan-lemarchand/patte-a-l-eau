@@ -1,23 +1,30 @@
 import { Client } from 'minio';
 import { NextResponse } from 'next/server';
 
-// Utiliser les variables d'environnement pour la configuration
-const endpoint = process.env.MINIO_ENDPOINT || '';
-const port = parseInt(process.env.MINIO_PORT || '443');
-const useSSL = process.env.MINIO_USE_SSL !== 'false';
+// Lazy initialization du client Minio
+let minioClient: Client | null = null;
 
-if (!endpoint) {
-    throw new Error('MINIO_ENDPOINT environment variable is not set');
+function getMinioClient(): Client {
+    if (!minioClient) {
+        const endpoint = process.env.MINIO_ENDPOINT || '';
+        const port = parseInt(process.env.MINIO_PORT || '443');
+        const useSSL = process.env.MINIO_USE_SSL !== 'false';
+
+        if (!endpoint) {
+            throw new Error('MINIO_ENDPOINT environment variable is not set');
+        }
+
+        minioClient = new Client({
+            endPoint: endpoint,
+            port: port,
+            useSSL: useSSL,
+            accessKey: process.env.MINIO_ACCESS_KEY || '',
+            secretKey: process.env.MINIO_SECRET_KEY || '',
+            region: process.env.MINIO_REGION || 'us-east-1'
+        });
+    }
+    return minioClient;
 }
-
-const minioClient = new Client({
-    endPoint: endpoint,
-    port: port,
-    useSSL: useSSL,
-    accessKey: process.env.MINIO_ACCESS_KEY || '',
-    secretKey: process.env.MINIO_SECRET_KEY || '',
-    region: process.env.MINIO_REGION || 'us-east-1'
-});
 
 export async function GET(request: Request) {
     try {
@@ -37,15 +44,17 @@ export async function GET(request: Request) {
 
         console.log(`Attempting to access object: ${objectName} in bucket: ${bucketName}`);
 
+        const client = getMinioClient();
+
         // Vérifier si l'objet existe avant de générer l'URL
         try {
-            await minioClient.statObject(bucketName, objectName);
+            await client.statObject(bucketName, objectName);
         } catch (statError) {
             console.error(`Object ${objectName} not found in bucket ${bucketName}:`, statError);
             return NextResponse.json({ error: 'Object not found' }, { status: 404 });
         }
 
-        const url = await minioClient.presignedGetObject(
+        const url = await client.presignedGetObject(
             bucketName,
             objectName,
             7 * 24 * 60 * 60 // 7 jours
