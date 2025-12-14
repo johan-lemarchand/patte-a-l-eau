@@ -1,0 +1,23 @@
+services:
+  patte-a-l-eau:
+    build:
+      context: .
+      args:
+        - NEXT_PUBLIC_BASE_URL=https://pattesaleau-toilettage.fr
+        - NEXT_PUBLIC_RECAPTCHA_SITE_KEY=${NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        - NEXT_PUBLIC_MINIO_ENDPOINT=${NEXT_PUBLIC_MINIO_ENDPOINT}
+        - NEXT_PUBLIC_MINIO_BUCKET_NAME=${NEXT_PUBLIC_MINIO_BUCKET_NAME}
+    container_name: patte-a-l-eau
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+    networks:
+      - web
+
+networks:
+  web:
+    external: true
