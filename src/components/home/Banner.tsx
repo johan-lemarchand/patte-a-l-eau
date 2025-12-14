@@ -125,8 +125,8 @@ export default function Banner() {
                           className="w-100"
                           style={{ maxHeight: '80vh' }}
                         >
-                          <source 
-                            src={`https://${process.env.NEXT_PUBLIC_MINIO_ENDPOINT}/${process.env.NEXT_PUBLIC_MINIO_BUCKET_NAME}/711dd14577bdd6ffe207d1afe8a01682.mp4`}
+                          <source
+                            src="/image/video-clara.mp4"
                             type="video/mp4"
                           />
                           Votre navigateur ne supporte pas la lecture de vidéos.
