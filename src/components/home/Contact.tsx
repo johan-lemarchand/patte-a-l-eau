@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import ReCAPTCHA from "react-google-recaptcha";
 import content from '@/content.json';
 
 interface ContactInfo {
@@ -18,7 +17,7 @@ interface Contact {
 
 export default function Contact() {
   const { contact } = content;
-  const [isVerified, setIsVerified] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [formData, setFormData] = useState({
     first_name: '',
     last_name: '',
@@ -65,10 +64,6 @@ export default function Contact() {
     }
   };
 
-  const handleRecaptchaChange = (token: string | null) => {
-    setIsVerified(token);
-  };
-
   // Ajouter ces fonctions pour gérer les toasts
   const showToast = (id: string) => {
     const toast = document.getElementById(id);
@@ -82,11 +77,6 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    if (!isVerified) {
-      alert('Veuillez valider le reCAPTCHA');
-      return;
-    }
 
     const form = e.currentTarget;
     if (!form.checkValidity()) {
@@ -95,25 +85,9 @@ export default function Contact() {
       return;
     }
 
+    setIsSubmitting(true);
+
     try {
-      // Vérifier le reCAPTCHA
-      const verifyResponse = await fetch('/api/verify-recaptcha', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          token: isVerified
-        }),
-      });
-
-      const verifyData = await verifyResponse.json();
-
-      if (!verifyData.success) {
-        throw new Error('reCAPTCHA verification failed');
-      }
-
-      // Envoi de l'email
       const emailResponse = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -128,8 +102,7 @@ export default function Contact() {
       }
 
       showToast('success-toast');
-      
-      // Réinitialiser le formulaire
+
       setFormData({
         first_name: '',
         last_name: '',
@@ -137,17 +110,12 @@ export default function Contact() {
         phone: '',
         message: ''
       });
-      setIsVerified(null);
       form.classList.remove('was-validated');
-      
-      // Réinitialiser le reCAPTCHA
-      const recaptcha = document.querySelector('iframe[title="reCAPTCHA"]');
-      if (recaptcha) {
-        recaptcha.parentElement?.querySelector('div')?.click();
-      }
     } catch (error) {
       console.error('Erreur lors de l\'envoi du formulaire:', error);
       showToast('error-toast');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -337,20 +305,13 @@ export default function Contact() {
                   </div>
                 </div>
 
-                <div className="mb-4">
-                  <ReCAPTCHA
-                    sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ''}
-                    onChange={handleRecaptchaChange}
-                  />
-                </div>
-
                 <div className="text-center">
-                  <button 
-                    type="submit" 
+                  <button
+                    type="submit"
                     className="btn btn-accent submit_form py-3 w-100"
-                    disabled={!isVerified}
+                    disabled={isSubmitting}
                   >
-                    Envoyer
+                    {isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
                   </button>
                 </div>
               </form>
