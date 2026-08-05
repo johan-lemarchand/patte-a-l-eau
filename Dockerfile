@@ -1,4 +1,4 @@
-FROM node:20-alpine AS base
+FROM node:24-alpine AS base
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -15,15 +15,10 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Build arguments for environment variables needed at build time
+# (MinIO et reCAPTCHA ont ete retires : plus aucune variable associee)
 ARG NEXT_PUBLIC_BASE_URL
-ARG NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-ARG NEXT_PUBLIC_MINIO_ENDPOINT
-ARG NEXT_PUBLIC_MINIO_BUCKET_NAME
 
 ENV NEXT_PUBLIC_BASE_URL=$NEXT_PUBLIC_BASE_URL
-ENV NEXT_PUBLIC_RECAPTCHA_SITE_KEY=$NEXT_PUBLIC_RECAPTCHA_SITE_KEY
-ENV NEXT_PUBLIC_MINIO_ENDPOINT=$NEXT_PUBLIC_MINIO_ENDPOINT
-ENV NEXT_PUBLIC_MINIO_BUCKET_NAME=$NEXT_PUBLIC_MINIO_BUCKET_NAME
 
 RUN npm run build
 
