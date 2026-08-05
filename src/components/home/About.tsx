@@ -10,13 +10,18 @@ export default function About() {
                     <div className="col mb-lg-0 mb-3">
                         <div className="position-relative">
                             <div className="ps-lg-5 ps-0">
-                                <LocalImage 
-                                    src={about.image.src}
-                                    alt={about.image.alt}
-                                    width={600}
-                                    height={600}
-                                    className="img-fluid"
-                                />
+                                {/* Ratio carre impose : la photo source est en 9:16, sans conteneur
+                                    elle s'affichait sur toute la hauteur de la page. */}
+                                <div className="position-relative w-100 rounded-3 overflow-hidden"
+                                     style={{ aspectRatio: '1 / 1' }}>
+                                    <LocalImage
+                                        src={about.image.src}
+                                        alt={about.image.alt}
+                                        fill
+                                        sizes="(max-width: 992px) 100vw, 50vw"
+                                        objectPosition="center top"
+                                    />
+                                </div>
                             </div>
                             <div className="position-absolute start-0 bottom-0" style={{ zIndex: 2 }}>
                                 <div className="bg-accent-color rounded-3 d-flex align-items-center gap-3 px-5 py-3 text-white">

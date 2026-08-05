@@ -7,6 +7,10 @@ type LocalImageProps = Omit<ImageProps, 'src'> & {
     height?: number;
     fill?: boolean;
     priority?: boolean;
+    // Cadrage vertical du sujet quand l'image est rognee (object-fit: cover).
+    // Les photos sont en majorite au format portrait alors que les vignettes
+    // sont en paysage : sans reglage, le centrage par defaut coupe les tetes.
+    objectPosition?: string;
 };
 
 // Les images vivent dans /public/image/. On accepte aussi bien un simple nom de
@@ -27,6 +31,7 @@ export default function LocalImage({
     className,
     fill,
     priority = false,
+    objectPosition,
     ...props
 }: LocalImageProps) {
     const imagePath = resolveImagePath(src);
@@ -40,7 +45,8 @@ export default function LocalImage({
                 fill={true}
                 style={{
                     ...style,
-                    objectFit: 'cover'
+                    objectFit: 'cover',
+                    objectPosition: objectPosition ?? style?.objectPosition
                 }}
                 className={className}
                 priority={priority}
@@ -56,7 +62,7 @@ export default function LocalImage({
             alt={alt}
             width={width || 800}
             height={height || 600}
-            style={style}
+            style={objectPosition ? { ...style, objectPosition } : style}
             className={className}
             priority={priority}
             loading={priority ? "eager" : "lazy"}

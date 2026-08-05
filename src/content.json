@@ -71,21 +71,24 @@
         "title": "Installations Confortables",
         "description": "Un espace calme et accueillant, conçu pour le bien-être de votre animal et pour réduire le stress pendant les soins.",
         "image": "photo-perso.webp",
-        "alt": "Installations Confortables"
+        "alt": "Installations Confortables",
+        "position": "center 40%"
       },
       {
         "id": "service-2",
         "title": "Soins de Toilettage Professionnels",
         "description": "Des soins complets et personnalisés adaptés aux besoins de chaque race, réalisés avec des produits de qualité.",
         "image": "interieur-salon.webp",
-        "alt": "Soins de Toilettage Professionnels"
+        "alt": "Soins de Toilettage Professionnels",
+        "position": "center 50%"
       },
       {
         "id": "service-3",
         "title": "Attention Personnalisée pour Chaque Animal",
         "description": "Chaque animal est unique et mérite une attention particulière. Clara prend le temps de s'adapter aux besoins et aux préférences de votre compagnon.",
         "image": "photo-principale.webp",
-        "alt": "Attention Personnalisée"
+        "alt": "Attention Personnalisée",
+        "position": "center 25%"
       }
     ]
   },
@@ -121,7 +124,8 @@
         ],
         "image": {
           "src": "chat.webp",
-          "alt": "Forfait Chats"
+          "alt": "Forfait Chats",
+          "position": "center 50%"
         }
       },
       {
@@ -144,7 +148,8 @@
         ],
         "image": {
           "src": "petit-chien-1.webp",
-          "alt": "Forfait Très Petit Gabarit"
+          "alt": "Forfait Très Petit Gabarit",
+          "position": "center 50%"
         }
       },
       {
@@ -171,7 +176,8 @@
         ],
         "image": {
           "src": "petit-chien-2.webp",
-          "alt": "Forfait Petit Gabarit"
+          "alt": "Forfait Petit Gabarit",
+          "position": "center 40%"
         }
       },
       {
@@ -198,7 +204,8 @@
         ],
         "image": {
           "src": "chien-moyen.webp",
-          "alt": "Forfait Gabarit Moyen"
+          "alt": "Forfait Gabarit Moyen",
+          "position": "center 50%"
         }
       },
       {
@@ -207,7 +214,8 @@
         "description": "Grand chien poils courts (labrador, rottweiler, Dalmatien ect) : à partir de 45€<br />Grand chien poils long (border collie, berger australien, berger allemand) : à partir de 65€<br />Grand chien Nordique (malamute, husky, bobtail, bouvier bernois) : 45€ / l'heure",
         "image": {
           "src": "grand-gabarit.webp",
-          "alt": "Forfait Grand Gabarit"
+          "alt": "Forfait Grand Gabarit",
+          "position": "center 25%"
         }
       },
       {
@@ -216,7 +224,8 @@
         "description": "Terre Neuve..., 50 Euros de l'heure",
         "image": {
           "src": "tres-gros-chien.webp",
-          "alt": "Forfait Très Grand Gabarit"
+          "alt": "Forfait Très Grand Gabarit",
+          "position": "center 25%"
         }
       }
     ],

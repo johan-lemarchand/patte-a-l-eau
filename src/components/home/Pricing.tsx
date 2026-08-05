@@ -13,6 +13,7 @@ interface BasePricingPlan {
     image: {
         src: string;
         alt: string;
+        position?: string;
     };
     basePrice?: number;
     extraPrice?: number;
@@ -93,6 +94,7 @@ export default function Pricing() {
                                             fill
                                             sizes="(max-width: 768px) 100vw, 33vw"
                                             className="rounded-top-3"
+                                            objectPosition={plan.image.position}
                                             style={{ objectFit: 'cover' }}
                                             priority
                                         />

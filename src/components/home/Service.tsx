@@ -7,6 +7,7 @@ interface ServiceCard {
     description: string;
     image: string;
     alt: string;
+    position?: string;
 }
 
 export default function Service() {
@@ -41,6 +42,7 @@ export default function Service() {
                                         src={service.image}
                                         alt={service.alt}
                                         fill
+                                        objectPosition={service.position}
                                         style={{ objectFit: 'cover' }}
                                         className="rounded-top-3"
                                     />

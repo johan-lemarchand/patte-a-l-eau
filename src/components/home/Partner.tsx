@@ -39,6 +39,7 @@ export default function Partner() {
                                                 src="boutique.webp"
                                                 alt="Notre boutique de produits"
                                                 fill
+                                                objectPosition="center 30%"
                                                 className="rounded-3 object-fit-cover"
                                             />
                                         </div>
