@@ -6,7 +6,7 @@ import LocalImage from '@/components/common/LocalImage'
 import content from '@/content.json'
 
 export default function Header() {
-  const { header } = content;
+  const { header, social } = content;
   const navbarToggler = useRef<HTMLButtonElement>(null);
   const navbarCollapse = useRef<HTMLDivElement>(null);
 
@@ -90,18 +90,18 @@ export default function Header() {
                 </li>
               </ul>
               <div className="social-container mb-lg-0 mb-3 me-5">
-                  <Link href="https://www.facebook.com" className="social-item">
-                      <i className="fa-brands fa-facebook-f"></i>
-                  </Link>
-                  <Link href="https://www.twitter.com" className="social-item">
-                      <i className="fa-brands fa-twitter"></i>
-                  </Link>
-                  <Link href="https://www.instagram.com" className="social-item">
-                      <i className="fa-brands fa-instagram"></i>
-                  </Link>
-                  <Link href="https://www.youtube.com" className="social-item">
-                      <i className="fa-brands fa-youtube"></i>
-                  </Link>
+                  {social.facebook && (
+                    <Link href={social.facebook} target="_blank" rel="noopener noreferrer"
+                          aria-label="Facebook" className="social-item">
+                        <i className="fa-brands fa-facebook-f"></i>
+                    </Link>
+                  )}
+                  {social.instagram && (
+                    <Link href={social.instagram} target="_blank" rel="noopener noreferrer"
+                          aria-label="Instagram" className="social-item">
+                        <i className="fa-brands fa-instagram"></i>
+                    </Link>
+                  )}
               </div>
               <div>
                 <Link href={`tel:${header.phone.number}`} className="btn btn-accent px-4 py-3">

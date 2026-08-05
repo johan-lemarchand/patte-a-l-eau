@@ -5,7 +5,7 @@ import Link from 'next/link'
 import content from '@/content.json'
 
 export default function Footer() {
-    const { footer } = content;
+    const { footer, social } = content;
     return (
         <footer>
             <div className="section pb-0 bg-light-color">
@@ -108,18 +108,18 @@ export default function Footer() {
                                     </li>
                                 </ul>
                                 <div className="social-container mb-lg-0 mb-3">
-                                    <Link href="https://www.facebook.com" className="social-item">
-                                        <i className="fa-brands fa-facebook-f"></i>
-                                    </Link>
-                                    <Link href="https://www.twitter.com" className="social-item">
-                                        <i className="fa-brands fa-twitter"></i>
-                                    </Link>
-                                    <Link href="https://www.instagram.com" className="social-item">
-                                        <i className="fa-brands fa-instagram"></i>
-                                    </Link>
-                                    <Link href="https://www.youtube.com" className="social-item">
-                                        <i className="fa-brands fa-youtube"></i>
-                                    </Link>
+                                    {social.facebook && (
+                                        <Link href={social.facebook} target="_blank" rel="noopener noreferrer"
+                                              aria-label="Facebook" className="social-item">
+                                            <i className="fa-brands fa-facebook-f"></i>
+                                        </Link>
+                                    )}
+                                    {social.instagram && (
+                                        <Link href={social.instagram} target="_blank" rel="noopener noreferrer"
+                                              aria-label="Instagram" className="social-item">
+                                            <i className="fa-brands fa-instagram"></i>
+                                        </Link>
+                                    )}
                                 </div>
                             </div>
                         </div>
