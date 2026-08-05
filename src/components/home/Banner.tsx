@@ -71,8 +71,8 @@ export default function Banner() {
                 id={banner.images.main.id}
                 src={banner.images.main.src}
                 alt={banner.images.main.alt}
-                width={600}
-                height={700}
+                width={800}
+                height={450}
                 className="img-fluid"
               />
               <div className="position-absolute start-0 bottom-0 video-e119">
@@ -98,7 +98,7 @@ export default function Banner() {
                     src={banner.images.video.src}
                     alt={banner.images.video.alt}
                     width={600}
-                    height={400}
+                    height={450}
                     className="w-100 img-fluid"
                   />
                 </div>

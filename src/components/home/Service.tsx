@@ -36,7 +36,9 @@ export default function Service() {
                     {services.items.map((service: ServiceCard) => (
                         <div key={service.id} id={`service-card-${service.id}`} className="col">
                             <div className="h-100 d-flex flex-column">
-                                <div className="position-relative" style={{ height: '250px' }}>
+                                {/* Ratio fixe plutot qu'une hauteur fixe : en pleine largeur
+                                    (< 992px) une hauteur de 250px donnait une bande de 3,8:1. */}
+                                <div className="position-relative" style={{ aspectRatio: '3 / 2' }}>
                                     <LocalImage
                                         id={`service-image-${service.id}`}
                                         src={service.image}

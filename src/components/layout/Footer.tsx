@@ -18,7 +18,7 @@ export default function Footer() {
                                         src={footer.logo.src}
                                         alt={footer.logo.alt}
                                         width={150}
-                                        height={50}
+                                        height={150}
                                         className="img-fluid mb-4"
                                     />
                                 </div>

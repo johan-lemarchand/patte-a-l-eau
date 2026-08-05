@@ -29,7 +29,7 @@ export default function Header() {
                   src={header.logo.src}
                   alt={header.logo.alt}
                   width={150}
-                  height={50}
+                  height={150}
                   className="img-fluid"
                 />
               </Link>

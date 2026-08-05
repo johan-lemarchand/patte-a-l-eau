@@ -71,7 +71,7 @@ export default function Faq() {
                                 src="faq.webp"
                                 alt="FAQ illustration"
                                 width={600}
-                                height={700}
+                                height={600}
                                 className="img-fluid"
                             />
                         </div>

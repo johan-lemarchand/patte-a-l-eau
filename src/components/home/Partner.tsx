@@ -33,7 +33,7 @@ export default function Partner() {
                             <div className="bg-white p-4 rounded-3 shadow-sm h-100">
                                 <div className="d-flex flex-column h-100">
                                     {partner.type === 'product' ? (
-                                        <div className="mb-4 position-relative" style={{ height: '250px' }}>
+                                        <div className="mb-4 position-relative" style={{ aspectRatio: '3 / 2' }}>
                                             <LocalImage
                                                 id={`partner-image-${partner.id}`}
                                                 src="boutique.webp"

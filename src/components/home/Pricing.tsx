@@ -86,7 +86,7 @@ export default function Pricing() {
                         return (
                             <div key={plan.id} id={plan.id} className="col">
                                 <div className="h-100 d-flex flex-column">
-                                    <div className="position-relative" style={{ height: '250px' }}>
+                                    <div className="position-relative" style={{ aspectRatio: '3 / 2' }}>
                                         <LocalImage 
                                             id={`pricing-image-${plan.id}`}
                                             src={plan.image.src}
