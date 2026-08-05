@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 16 16">
+  <!-- Masque monochrome pour les onglets epingles Safari : trace vectoriel
+       de la patte de la marque, une seule couleur, fond transparent. -->
+  <g fill="#000000">
+    <ellipse cx="3.2" cy="7.3" rx="1.45" ry="2.05" transform="rotate(-27 3.2 7.3)"/>
+    <ellipse cx="6.35" cy="5.2" rx="1.5" ry="2.2" transform="rotate(-9 6.35 5.2)"/>
+    <ellipse cx="9.65" cy="5.2" rx="1.5" ry="2.2" transform="rotate(9 9.65 5.2)"/>
+    <ellipse cx="12.8" cy="7.3" rx="1.45" ry="2.05" transform="rotate(27 12.8 7.3)"/>
+    <path d="M8 8.05c2.12 0 4.24 2.32 4.54 4.24.25 1.62-1.02 2.53-2.33 2.22-.86-.2-1.56-.36-2.21-.36s-1.35.16-2.21.36c-1.31.31-2.58-.6-2.33-2.22C4.76 10.37 5.88 8.05 8 8.05Z"/>
+  </g>
+</svg>

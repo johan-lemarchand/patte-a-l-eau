@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { ImageProps } from 'next/image';
 
-type MinioImageProps = Omit<ImageProps, 'src'> & {
+type LocalImageProps = Omit<ImageProps, 'src'> & {
     src: string;
     width?: number;
     height?: number;
@@ -9,7 +9,16 @@ type MinioImageProps = Omit<ImageProps, 'src'> & {
     priority?: boolean;
 };
 
-export default function MinioImage({
+// Les images vivent dans /public/image/. On accepte aussi bien un simple nom de
+// fichier ("faq.webp") qu'un chemin deja prefixe ("/image/faq.webp") : sans ca,
+// un appelant qui passe un chemin absolu produit "/image//image/faq.webp".
+function resolveImagePath(src: string): string {
+    const trimmed = src.replace(/^\/+/, '');
+    const name = trimmed.startsWith('image/') ? trimmed.slice('image/'.length) : trimmed;
+    return `/image/${name}`;
+}
+
+export default function LocalImage({
     src,
     alt,
     width,
@@ -19,9 +28,8 @@ export default function MinioImage({
     fill,
     priority = false,
     ...props
-}: MinioImageProps) {
-    // Utiliser les images locales depuis /public/image/
-    const imagePath = `/image/${src}`;
+}: LocalImageProps) {
+    const imagePath = resolveImagePath(src);
 
     if (fill) {
         return (

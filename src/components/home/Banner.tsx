@@ -1,6 +1,6 @@
 'use client'
 
-import MinioImage from '@/components/common/MinioImage'
+import LocalImage from '@/components/common/LocalImage'
 import Link from 'next/link'
 import content from '@/content.json'
 import { useEffect } from 'react'
@@ -67,7 +67,7 @@ export default function Banner() {
           </div>
           <div className="col">
             <div className="ps-lg-5 ps-0 position-relative">
-              <MinioImage 
+              <LocalImage 
                 id={banner.images.main.id}
                 src={banner.images.main.src}
                 alt={banner.images.main.alt}
@@ -93,7 +93,7 @@ export default function Banner() {
                       </button>
                     </div>
                   </div>
-                  <MinioImage 
+                  <LocalImage 
                     id={banner.images.video.id}
                     src={banner.images.video.src}
                     alt={banner.images.video.alt}

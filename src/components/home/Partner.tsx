@@ -1,4 +1,4 @@
-import MinioImage from '@/components/common/MinioImage'
+import LocalImage from '@/components/common/LocalImage'
 import Link from 'next/link'
 import content from '@/content.json'
 
@@ -34,7 +34,7 @@ export default function Partner() {
                                 <div className="d-flex flex-column h-100">
                                     {partner.type === 'product' ? (
                                         <div className="mb-4 position-relative" style={{ height: '250px' }}>
-                                            <MinioImage
+                                            <LocalImage
                                                 id={`partner-image-${partner.id}`}
                                                 src="boutique.webp"
                                                 alt="Notre boutique de produits"
@@ -44,7 +44,7 @@ export default function Partner() {
                                         </div>
                                     ) : (
                                         <div className="mb-4 d-flex justify-content-center" style={{ height: '100px' }}>
-                                            <MinioImage
+                                            <LocalImage
                                                 id={`partner-logo-${partner.id}`}
                                                 src="la-porte.webp"
                                                 alt="Logo La Porte de l'Espoir"

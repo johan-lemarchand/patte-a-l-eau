@@ -1,5 +1,5 @@
 import content from '@/content.json'
-import MinioImage from '../common/MinioImage'
+import LocalImage from '../common/LocalImage'
 
 export default function About() {
     const { about } = content;
@@ -10,7 +10,7 @@ export default function About() {
                     <div className="col mb-lg-0 mb-3">
                         <div className="position-relative">
                             <div className="ps-lg-5 ps-0">
-                                <MinioImage 
+                                <LocalImage 
                                     src={about.image.src}
                                     alt={about.image.alt}
                                     width={600}
@@ -49,7 +49,7 @@ export default function About() {
                                     <div key={feature.id} className="col">
                                         <div>
                                             <div className="d-flex flex-row align-items-center gap-2 mb-3">
-                                                <MinioImage 
+                                                <LocalImage 
                                                     src={feature.icon}
                                                     alt={feature.title}
                                                     width={40}

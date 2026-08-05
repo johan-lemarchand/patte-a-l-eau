@@ -2,7 +2,7 @@
 
 import { useRef } from 'react'
 import Link from 'next/link'
-import MinioImage from '@/components/common/MinioImage'
+import LocalImage from '@/components/common/LocalImage'
 import content from '@/content.json'
 
 export default function Header() {
@@ -24,7 +24,7 @@ export default function Header() {
           <div className="container-fluid">
             <div className="logo-container">
               <Link className="navbar-brand" href="/">
-                <MinioImage
+                <LocalImage
                   id={header.logo.id}
                   src={header.logo.src}
                   alt={header.logo.alt}

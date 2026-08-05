@@ -1,6 +1,6 @@
 'use client'
 
-import MinioImage from '@/components/common/MinioImage'
+import LocalImage from '@/components/common/LocalImage'
 import Link from 'next/link'
 import content from '@/content.json'
 
@@ -14,7 +14,7 @@ export default function Footer() {
                         <div className="col mb-3">
                             <div className="d-flex flex-column gap-4">
                                 <div className="container">
-                                    <MinioImage
+                                    <LocalImage
                                         src={footer.logo.src}
                                         alt={footer.logo.alt}
                                         width={150}

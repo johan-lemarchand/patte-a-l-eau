@@ -1,4 +1,4 @@
-import MinioImage from '@/components/common/MinioImage'
+import LocalImage from '@/components/common/LocalImage'
 import content from '@/content.json'
 
 interface PricingService {
@@ -86,7 +86,7 @@ export default function Pricing() {
                             <div key={plan.id} id={plan.id} className="col">
                                 <div className="h-100 d-flex flex-column">
                                     <div className="position-relative" style={{ height: '250px' }}>
-                                        <MinioImage 
+                                        <LocalImage 
                                             id={`pricing-image-${plan.id}`}
                                             src={plan.image.src}
                                             alt={plan.image.alt}
@@ -139,7 +139,7 @@ export default function Pricing() {
                             <div className="bg-light-color p-4 rounded-3 shadow-sm h-100">
                                 <div className="d-flex align-items-center gap-3 mb-3">
                                     {plan.image && (
-                                        <MinioImage 
+                                        <LocalImage 
                                             src={plan.image.src}
                                             alt={plan.image.alt}
                                             width={40} 
@@ -160,7 +160,7 @@ export default function Pricing() {
                         <div key={plan.id}>
                             <div className="d-flex align-items-center justify-content-center gap-3 mb-3">
                                 {plan.image && (
-                                    <MinioImage 
+                                    <LocalImage 
                                         src={plan.image.src}
                                         alt={plan.image.alt}
                                         width={40} 

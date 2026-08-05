@@ -1,4 +1,4 @@
-import MinioImage from '@/components/common/MinioImage'
+import LocalImage from '@/components/common/LocalImage'
 import content from '@/content.json'
 
 interface ServiceCard {
@@ -36,7 +36,7 @@ export default function Service() {
                         <div key={service.id} id={`service-card-${service.id}`} className="col">
                             <div className="h-100 d-flex flex-column">
                                 <div className="position-relative" style={{ height: '250px' }}>
-                                    <MinioImage
+                                    <LocalImage
                                         id={`service-image-${service.id}`}
                                         src={service.image}
                                         alt={service.alt}

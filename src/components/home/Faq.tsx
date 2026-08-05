@@ -1,6 +1,6 @@
 "use client";
 
-import MinioImage from '@/components/common/MinioImage'
+import LocalImage from '@/components/common/LocalImage'
 import content from '@/content.json'
 
 interface FaqItem {
@@ -67,8 +67,8 @@ export default function Faq() {
                     {/* Colonne de droite : Image */}
                     <div className="col">
                         <div className="position-relative">
-                            <MinioImage
-                                src="/faq.webp"
+                            <LocalImage
+                                src="faq.webp"
                                 alt="FAQ illustration"
                                 width={600}
                                 height={700}

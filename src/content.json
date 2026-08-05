@@ -364,13 +364,13 @@
     "features": [
       {
         "id": "feature-1",
-        "icon": "/image/icon-1.png",
+        "icon": "icon-1.png",
         "title": "Soin Expert",
         "description": "Passionnée par les animaux et diplômée en toilettage canin et félin, Clara s'engage à offrir des soins de qualité pour chaque compagnon à quatre pattes. Grâce à une expérience au sein d'une association de protection animale, elle comprend l'importance du bien-être de chaque animal et veille à leur offrir un environnement de toilettage apaisant."
       },
       {
         "id": "feature-2",
-        "icon": "/image/icon-2.png",
+        "icon": "icon-2.png",
         "title": "Emplacement Pratique",
         "description": "Située à Auenheim Rountzenheim, Clara propose un salon de toilettage facilement accessible pour les habitants de la région. Que vous veniez pour un toilettage complet ou un entretien régulier, le salon est aménagé pour offrir un cadre confortable et accueillant pour vous et votre compagnon."
       }
