@@ -1,0 +1,38 @@
+import * as Sentry from '@sentry/nextjs'
+import { createRateLimitedScrubber } from './lib/error-tracking-privacy'
+
+const dsn = process.env.NEXT_PUBLIC_GLITCHTIP_DSN
+
+if (dsn) {
+  Sentry.init({
+    dsn,
+    dataCollection: {
+      userInfo: false,
+      cookies: false,
+      httpHeaders: false,
+      httpBodies: [],
+      urlQueryParams: false,
+      graphQL: { document: false, variables: false },
+      genAI: { inputs: false, outputs: false },
+      databaseQueryData: false,
+      queues: false,
+      stackFrameVariables: false,
+      frameContextLines: 0,
+    },
+    tracesSampleRate: 0,
+    tracesSampler: () => 0,
+    traceLifecycle: 'static',
+    sendClientReports: false,
+    defaultIntegrations: false,
+    integrations: [Sentry.globalHandlersIntegration()],
+    replaysSessionSampleRate: 0,
+    replaysOnErrorSampleRate: 0,
+    beforeSendLog: () => null,
+    beforeSendMetric: () => null,
+    beforeSendTransaction: () => null,
+    attachStacktrace: false,
+    maxBreadcrumbs: 0,
+    beforeBreadcrumb: () => null,
+    beforeSend: createRateLimitedScrubber(),
+  })
+}

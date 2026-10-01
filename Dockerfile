@@ -17,8 +17,10 @@ COPY . .
 # Build arguments for environment variables needed at build time
 # (MinIO et reCAPTCHA ont ete retires : plus aucune variable associee)
 ARG NEXT_PUBLIC_BASE_URL
+ARG NEXT_PUBLIC_GLITCHTIP_DSN
 
 ENV NEXT_PUBLIC_BASE_URL=$NEXT_PUBLIC_BASE_URL
+ENV NEXT_PUBLIC_GLITCHTIP_DSN=$NEXT_PUBLIC_GLITCHTIP_DSN
 
 RUN npm run build
 
