@@ -6,6 +6,8 @@ const dsn = process.env.NEXT_PUBLIC_GLITCHTIP_DSN
 if (dsn) {
   Sentry.init({
     dsn,
+    debug: false,
+    spotlight: false,
     dataCollection: {
       userInfo: false,
       cookies: false,

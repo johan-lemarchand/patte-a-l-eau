@@ -6,6 +6,8 @@ const dsn = process.env.GLITCHTIP_DSN || process.env.NEXT_PUBLIC_GLITCHTIP_DSN
 if (dsn) {
   Sentry.init({
     dsn,
+    debug: false,
+    spotlight: false,
     release: process.env.SENTRY_RELEASE || undefined,
     environment: process.env.SENTRY_ENVIRONMENT || undefined,
     dataCollection: {
