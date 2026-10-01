@@ -1,5 +1,7 @@
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
+**Production:** Read [DEPLOYMENT-CONTINUITY.md](DEPLOYMENT-CONTINUITY.md) before deploying. The public route switched to a container outside the original Compose deployment on 1 October 2026.
+
 ## Getting Started
 
 First, run the development server:
